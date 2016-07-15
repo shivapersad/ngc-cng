@@ -18,5 +18,39 @@ export class HomepageComponent {
         console.log("CNG General Information pressed");
         this._router.navigate(["/cng-general-information"]);
     }
+
+    goToCNGSavingsCalculator(){
+        console.log("CNG Savings Calculator pressed");
+        this._router.navigate(["/cng-savings-calculator"]);
+    }
     
+    goToCO2EmissionsCalculator(){
+        console.log("CO2 Emissions Calculator pressed");
+        this._router.navigate(["/co2-emissions-calculator"]);
+    }
+    
+    goToCNGRefuellingStations(){
+        console.log("CNG Refuelling Stations pressed");
+        this._router.navigate(["/cng-refuelling-stations"]);
+    }
+    goToLicensedCNGConverters(){
+        console.log("Licensed CNG Converters pressed");
+        this._router.navigate(["/licensed-cng-converters"]);
+    }
+
+    goToDealersForOEMCNGVehicles(){
+        console.log("Dealers for OEM CNG Vehicles pressed");
+        this._router.navigate(["/dealers-for-oem-cng-vehicles"]);
+    }
+    
+    goToContactUs(){
+        console.log("Contact Us pressed");
+        this._router.navigate(["/contact-us"]);
+    }
+    // create folder structure and files
+    goToAboutNGCCNG(){
+        console.log("About NGC CNG pressed");
+        this._router.navigate(["/about-ngc-cng"]);
+    }
+
 }
