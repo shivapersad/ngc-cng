@@ -47,7 +47,7 @@ export class HomepageComponent {
         console.log("Contact Us pressed");
         this._router.navigate(["/contact-us"]);
     }
-    // create folder structure and files
+    
     goToAboutNGCCNG(){
         console.log("About NGC CNG pressed");
         this._router.navigate(["/about-ngc-cng"]);

@@ -1,4 +1,17 @@
-<ActionBar title="Contact Us"></ActionBar>
+<ActionBar [title]="title"></ActionBar>
 <StackLayout>
-    
+    <TextView class="instructions" editable="false" 
+        text="Instructions: Please fill out the contact form below and we will respond to the email you have provided in the form.">
+    </TextView>
+    <Label class="instructions" text="First name"></Label>
+    <TextField class="instructions" [(ngModel)]="firstName"></TextField>
+    <Label class="instructions" text="Last Name"></Label>
+    <TextField class="instructions" [(ngModel)]="lastName"></TextField>
+    <Label class="instructions" text="Email Address"></Label>
+    <TextField class="instructions" [(ngModel)]="emailAddress" keyboardType="email"></TextField>
+    <Label class="instructions" text="Question Subject"></Label>
+    <TextField class="instructions" [(ngModel)]="subject"></TextField>
+    <Label class="instructions" text="Questions/Comments"></Label>
+    <TextView class="instructions" [(ngModel)]="content"></TextView>
+    <Button class="forms" text="Submit" on-tap=sendContactForm()></Button>
 </StackLayout>

@@ -37,7 +37,6 @@ var HomepageComponent = (function () {
         console.log("Contact Us pressed");
         this._router.navigate(["/contact-us"]);
     };
-    // create folder structure and files
     HomepageComponent.prototype.goToAboutNGCCNG = function () {
         console.log("About NGC CNG pressed");
         this._router.navigate(["/about-ngc-cng"]);

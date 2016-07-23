@@ -1,4 +1,44 @@
-<ActionBar title="CNG Savings Calculator"></ActionBar>
-<StackLayout>
-    <Button text="CNG Savings Calculator"></Button>
-</StackLayout>
+<ActionBar [title]="title"></ActionBar>
+
+<ScrollView>
+    <StackLayout>
+        <Label text="How many vehicles do you operate?"></Label>
+        <TextField [(ngModel)]="cngSavings.vehicles" keyboardType="number"></TextField>
+
+        <Label text="Average Fuel Bill Per Week (Per Vehicle)?"></Label>
+        <!-- Commment out to remove scrolling -->
+        <!-- Need to update dynamically as input is received -->
+        <TextField [(ngModel)]="cngSavings.fuelBill" keyboardType="number"></TextField>
+
+        <Label text="Total Fuel Bill Per Week:"></Label>
+        <TextField [(ngModel)]="totalFuelBill" editable="false"></TextField>
+
+        <!-- Commment out to remove scrolling -->
+        <Label text="Diesel/Gasoline Cost Per Litre (TTD)"></Label>
+        <SegmentedBar #bar class="bar" [items]="fuelItems" [barSelectedIndex]="barSelectedIndex" 
+        (selectedIndexChange)="selectedBarIndexChanged(bar)"></SegmentedBar>
+        <!-- Commented out to put in place SegmentedBar -->
+        <!-- <TextField [(ngModel)]="cngSavings.petrolCost" keyboardType="number"></TextField> -->
+
+        <Label text="Litres of Diesel/Gasoline Bought"></Label>
+        <TextField [(ngModel)]="strTotalLitresPetrol" editable="false"></TextField>
+
+        <Label text="CNG Cost Per Litre (TTD)"></Label>
+        <TextField [(ngModel)]="cngSavings.cngCost" keyboardType="number"></TextField>
+
+        <!-- Commment out to remove scrolling -->
+        <Label text="Litres of CNG Equivalent Bought"></Label>
+        <TextField [(ngModel)]="totalLitresCNG" editable="false"></TextField>
+
+        <!-- Commment out to remove scrolling -->
+        <Label text="Cost To Convert Each Vehicle"></Label>
+        <TextField [(ngModel)]="cngSavings.costToConvert" keyboardType="number"></TextField>
+
+        <Label text="Each week using CNG could save (TTD):"></Label>
+        <TextView [(ngModel)]="strSavings" editable="false"></TextView>
+
+        <Button text="Calculate Savings" (tap)="calculateSavings(bar)"></Button>
+        <Button text="Clear Form" (tap)="clearForm()"></Button>
+
+    </StackLayout>
+</ScrollView>
