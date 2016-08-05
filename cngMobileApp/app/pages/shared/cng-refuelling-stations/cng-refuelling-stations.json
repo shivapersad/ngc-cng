@@ -1,0 +1,59 @@
+{
+    "stations":
+    {
+        "station1":
+        {
+            "name": "abc",
+            "company": "companyABC",
+            "coming-soon": "n",
+            "location": "Station Address 1",
+            "longtitude": "111",
+            "latitude": "222",
+            "services":
+            {
+                "cng": "y",
+                "shop": "y",
+                "pressure-checker": "n",
+                "pressure-tyres": "n",
+                "toilet": "n"
+            },
+            "opening-times":
+            {
+                "Sunday": "0600-2300",
+                "Monday": "0600-2300",
+                "Tuesday": "0600-2300",
+                "Wednesday": "0600-2300",
+                "Thursday": "0600-2300",
+                "Friday": "0600-2300",
+                "Saturday": "0600-2300"
+            }
+        },
+        "station2":
+        {
+            "name": "def",
+            "company": "companyABC",
+            "coming-soon": "n",
+            "location": "Station Address 2",
+            "longtitude": "111",
+            "latitude": "222",
+            "services":
+            {
+                "cng": "y",
+                "shop": "y",
+                "pressure-checker": "n",
+                "pressure-tyres": "n",
+                "toilet": "n"
+            },
+            "opening-times":
+            {
+                "Sunday": "0600-2300",
+                "Monday": "0600-2300",
+                "Tuesday": "0600-2300",
+                "Wednesday": "0600-2300",
+                "Thursday": "0600-2300",
+                "Friday": "0600-2300",
+                "Saturday": "0600-2300"
+            }
+        }
+    }
+}

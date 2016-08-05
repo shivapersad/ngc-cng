@@ -10,6 +10,9 @@ import {LicensedCNGConvertersComponent} from "./pages/licensed-cng-converters/li
 import {DealersForOEMCNGVehiclesComponent} from "./pages/dealers-for-oem-cng-vehicles/dealers-for-oem-cng-vehicles.component";
 import {ContactUsComponent} from "./pages/contact-us/contact-us.component";
 import {AboutNGCCNGComponent} from "./pages/about-ngc-cng/about-ngc-cng.component";
+import {CNGSavingsCalculatorV2Component} from "./pages/cng-savings-calculator-v2/cng-savings-calculator-v2.component";
+import {TestingAreaComponent} from "./pages/testing-area/testing-area.component";
+import {StationComponent} from "./pages/testing-area/station.component";
 
 export const routes: RouterConfig = [
   { path: "", component: HomepageComponent },
@@ -21,7 +24,10 @@ export const routes: RouterConfig = [
   { path: "licensed-cng-converters", component: LicensedCNGConvertersComponent},
   { path: "dealers-for-oem-cng-vehicles", component: DealersForOEMCNGVehiclesComponent},
   { path: "contact-us", component: ContactUsComponent},
-  { path: "about-ngc-cng", component: AboutNGCCNGComponent}
+  { path: "about-ngc-cng", component: AboutNGCCNGComponent},
+  { path: "cng-savings-calculator-v2", component: CNGSavingsCalculatorV2Component},
+  { path: "testing-area", component: TestingAreaComponent},
+  { path: "station/:id", component: StationComponent}
 ];
 
 export const APP_ROUTER_PROVIDERS = [

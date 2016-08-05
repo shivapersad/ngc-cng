@@ -1,12 +1,15 @@
-<ActionBar title="NGC CNG"></ActionBar>
-<StackLayout>
-    <Button text="News" on-tap="goToNews()"></Button>
-    <Button text="CNG General Information" on-tap="goToCNGGeneralInformation()"></Button>
-    <Button text="CNG Savings Calculator" on-tap="goToCNGSavingsCalculator()"></Button>
-    <Button text="CO2 Emissions Calculator" on-tap="goToCO2EmissionsCalculator()"></Button>
-    <Button text="CNG Refuelling Stations" on-tap="goToCNGRefuellingStations()"></Button>
-    <Button text="Licensed CNG Converters" on-tap="goToLicensedCNGConverters()"></Button>
-    <Button text="Dealers for OEM CNG Vehicles" on-tap="goToDealersForOEMCNGVehicles()"></Button>
-    <Button text="Contact Us" on-tap="goToContactUs()"></Button>
-    <Button text="About NGC CNG" on-tap="goToAboutNGCCNG()"></Button>
-</StackLayout>
+<ActionBar [title]="title"></ActionBar>
+<WrapLayout>
+    <Image src="res://homepage" stretch="none"></Image>
+    <Button text="News" on-tap="goToNews()" textWrap="true"></Button>
+    <Button text="CNG General Information" on-tap="goToCNGGeneralInformation()" textWrap="true"></Button>
+    <Button text="CNG Savings Calculator" on-tap="goToCNGSavingsCalculator()" textWrap="true"></Button>
+    <Button text="CO2 Emissions Calculator" on-tap="goToCO2EmissionsCalculator()" textWrap="true"></Button>
+    <Button text="CNG Refuelling Stations" on-tap="goToCNGRefuellingStations()" textWrap="true"></Button>
+    <Button text="Licensed CNG Converters" on-tap="goToLicensedCNGConverters()" textWrap="true"></Button>
+    <Button text="Dealers for OEM CNG Vehicles" on-tap="goToDealersForOEMCNGVehicles()" textWrap="true"></Button>
+    <Button text="Contact Us" on-tap="goToContactUs()" textWrap="true"></Button>
+    <Button text="About NGC CNG" on-tap="goToAboutNGCCNG()" textWrap="true"></Button>
+    <Button text="CNG Savings Calc V2" on-tap="goToCNGSavingsCalculatorV2()" textWrap="true"></Button>
+    <Button text="Testing Area" on-tap="goToTesting()" textWrap="true"></Button>
+</WrapLayout>

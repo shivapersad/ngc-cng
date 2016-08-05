@@ -5,10 +5,10 @@
   "repository": "<fill-your-repository-here>",
   "nativescript": {
     "id": "org.nativescript.cngMobileApp",
-    "tns-android": {
+    "tns-ios": {
       "version": "2.1.1"
     },
-    "tns-ios": {
+    "tns-android": {
       "version": "2.1.1"
     }
   },
@@ -22,7 +22,9 @@
     "@angular/platform-server": "2.0.0-rc.3",
     "@angular/router": "3.0.0-alpha.7",
     "@angular/router-deprecated": "2.0.0-rc.2",
+    "chart.js": "^2.2.1",
     "nativescript-angular": "0.2.0",
+    "ng2-charts": "^1.1.0",
     "tns-core-modules": "^2.1.0"
   },
   "devDependencies": {

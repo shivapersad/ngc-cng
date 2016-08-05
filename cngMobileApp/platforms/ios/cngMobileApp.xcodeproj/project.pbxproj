@@ -14,6 +14,12 @@
 		D569940235B54A43939BF35B /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EA751FEFF1124AC6B8C2002D /* build.xcconfig */; };
 		B8837992229F44299DCF3194 /* TNSWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016992CC7A4F4B1F9D82464C /* TNSWidgets.framework */; };
 		319B8E260B8748E6A7AD96B9 /* TNSWidgets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 016992CC7A4F4B1F9D82464C /* TNSWidgets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9BD863117A3643ECB86A87C5 /* homepage.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B04D2F4C3C42D69B357A52 /* homepage.png */; };
+		5864A0ACEC884C20B321C312 /* homepage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA8E05E30F1484987FB2C92 /* homepage@2x.png */; };
+		4E59D4B129C14BC682171E50 /* homepage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2274461DD8945A69797E889 /* homepage@3x.png */; };
+		338DAC6276CB4AE0B9CAB905 /* notAvailable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EACA08CB0E4D078B32922F /* notAvailable@2x.png */; };
+		B64E58A5471448DEBF688A51 /* notAvailable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5401663CFFF04A05A42A7AE7 /* notAvailable@3x.png */; };
+		C50B7552242E451A8727849A /* notAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4B7758F6864D3597B0662D /* notAvailable.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +51,12 @@
 		105D23B67E0B4E0EB3EF8018 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = LaunchScreen.storyboard; path = "cngMobileApp/Resources/LaunchScreen.storyboard"; sourceTree = "<group>"; fileEncoding = 4; };
 		EA751FEFF1124AC6B8C2002D /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = build.xcconfig; path = "cngMobileApp/Resources/build.xcconfig"; sourceTree = "<group>"; fileEncoding = 4; };
 		016992CC7A4F4B1F9D82464C /* TNSWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TNSWidgets.framework; path = "../../lib/iOS/TNSWidgets.framework"; sourceTree = "<group>"; };
+		50B04D2F4C3C42D69B357A52 /* homepage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homepage.png; path = "cngMobileApp/Resources/homepage.png"; sourceTree = "<group>"; };
+		0FA8E05E30F1484987FB2C92 /* homepage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "homepage@2x.png"; path = "cngMobileApp/Resources/homepage@2x.png"; sourceTree = "<group>"; };
+		F2274461DD8945A69797E889 /* homepage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "homepage@3x.png"; path = "cngMobileApp/Resources/homepage@3x.png"; sourceTree = "<group>"; };
+		01EACA08CB0E4D078B32922F /* notAvailable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notAvailable@2x.png"; path = "cngMobileApp/Resources/notAvailable@2x.png"; sourceTree = "<group>"; };
+		5401663CFFF04A05A42A7AE7 /* notAvailable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notAvailable@3x.png"; path = "cngMobileApp/Resources/notAvailable@3x.png"; sourceTree = "<group>"; };
+		EE4B7758F6864D3597B0662D /* notAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notAvailable.png; path = "cngMobileApp/Resources/notAvailable.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +127,12 @@
 				CEE9D35ACB7A41DAAF40D46F /* Assets.xcassets */,
 				105D23B67E0B4E0EB3EF8018 /* LaunchScreen.storyboard */,
 				EA751FEFF1124AC6B8C2002D /* build.xcconfig */,
+				50B04D2F4C3C42D69B357A52 /* homepage.png */,
+				0FA8E05E30F1484987FB2C92 /* homepage@2x.png */,
+				F2274461DD8945A69797E889 /* homepage@3x.png */,
+				01EACA08CB0E4D078B32922F /* notAvailable@2x.png */,
+				5401663CFFF04A05A42A7AE7 /* notAvailable@3x.png */,
+				EE4B7758F6864D3597B0662D /* notAvailable.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -180,6 +198,12 @@
 				C49CB4B9F4A84F82BB93364E /* Assets.xcassets in Resources */,
 				DFC5312EB2F644BCA7161AAB /* LaunchScreen.storyboard in Resources */,
 				D569940235B54A43939BF35B /* build.xcconfig in Resources */,
+				9BD863117A3643ECB86A87C5 /* homepage.png in Resources */,
+				5864A0ACEC884C20B321C312 /* homepage@2x.png in Resources */,
+				4E59D4B129C14BC682171E50 /* homepage@3x.png in Resources */,
+				338DAC6276CB4AE0B9CAB905 /* notAvailable@2x.png in Resources */,
+				B64E58A5471448DEBF688A51 /* notAvailable@3x.png in Resources */,
+				C50B7552242E451A8727849A /* notAvailable.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

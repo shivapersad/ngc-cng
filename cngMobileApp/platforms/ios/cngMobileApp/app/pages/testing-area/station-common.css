@@ -1,0 +1,89 @@
+Image.provider {
+
+    width: 40%;
+    height: 40%;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+}
+
+Image.facilities {
+
+    width: 20%;
+    height: 20%;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+}
+
+Button.openingTimes {
+
+    width: 40%;
+    height: 10%;
+    background-color: green;
+    color: white;
+    font-size: 16;
+    text-align:center;
+    margin-top: 40px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+}
+
+Button.navigateThere {
+
+    width: 40%;
+    height: 10%;
+    background-color: green;
+    color: white;
+    font-size: 16;
+    text-align:center;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+}
+
+Label { 
+    border-width: 2;
+    border-color: red;
+    width: 20%;
+    height: 10%;
+}
+
+Label.lblFacilities {
+    font-size: 18;
+    color: black;
+    width: 100%;
+    height: 5%;
+}
+
+Label.leftBar {
+    fontsize: 14;
+    color: black;
+    width: 45%;
+    height: 10%;
+}
+
+GridLayout {
+    border-width: 2;
+    border-color: red;
+}
+
+Image {
+    border-width: 2;
+    border-color: red;
+    width: 20%;
+    height: 10%;
+}
+
+Button { 
+    border-width: 2;
+    border-color: red;
+}

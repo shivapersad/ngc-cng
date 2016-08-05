@@ -4,6 +4,7 @@ var router_1 = require("@angular/router");
 var HomepageComponent = (function () {
     function HomepageComponent(_router) {
         this._router = _router;
+        this.title = "NGC CNG";
     }
     HomepageComponent.prototype.goToNews = function () {
         console.log("News pressed");
@@ -37,10 +38,17 @@ var HomepageComponent = (function () {
         console.log("Contact Us pressed");
         this._router.navigate(["/contact-us"]);
     };
-    // create folder structure and files
     HomepageComponent.prototype.goToAboutNGCCNG = function () {
         console.log("About NGC CNG pressed");
         this._router.navigate(["/about-ngc-cng"]);
+    };
+    HomepageComponent.prototype.goToCNGSavingsCalculatorV2 = function () {
+        console.log("CNG Savings Calc V2 pressed");
+        this._router.navigate(["/cng-savings-calculator-v2"]);
+    };
+    HomepageComponent.prototype.goToTesting = function () {
+        console.log("Testing Area pressed");
+        this._router.navigate(["/testing-area"]);
     };
     HomepageComponent = __decorate([
         core_1.Component({

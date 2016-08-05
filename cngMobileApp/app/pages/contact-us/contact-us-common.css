@@ -6,7 +6,8 @@ TextView.instructions{
 Label.instructions{
     font-size: 14px;
     horizontal-align: left;
-    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 TextField.instructions{
@@ -23,4 +24,15 @@ Button.forms{
     padding-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-right: 30px;
+}
+
+TextField.field-border{
+    border-color: black;
+    border-width: 2;
+}
+
+TextView.field-border{
+    border-color: black;
+    border-width: 2;
 }

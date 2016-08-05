@@ -2,6 +2,16 @@
 var core_1 = require("@angular/core");
 var DealersForOEMCNGVehiclesComponent = (function () {
     function DealersForOEMCNGVehiclesComponent() {
+        this.dealers = [
+            {
+                "name": "Honda City CNG",
+                "website": "www.cng.city"
+            }
+        ];
+        this.title = "Dealers for OEM CNG Vehicles";
+        this.dealer = this.dealers[0];
+        console.log("Name: " + this.dealer['name']);
+        console.log("Website: " + this.dealer['website']);
     }
     DealersForOEMCNGVehiclesComponent = __decorate([
         core_1.Component({

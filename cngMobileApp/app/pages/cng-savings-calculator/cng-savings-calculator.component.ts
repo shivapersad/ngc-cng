@@ -1,9 +1,7 @@
 import {Component} from "@angular/core";
-import {CNGSavings} from "../shared/cngSavings";
-
+import {CNGSavings} from "./cngSavings";
 
 @Component({
-    selector: "cng-savings-calculator",
     templateUrl: "pages/cng-savings-calculator/cng-savings-calculator.html",
     styleUrls: ["pages/cng-savings-calculator/cng-savings-calculator.css", 
                 "pages/cng-savings-calculator/cng-savings-calculator-common.css"]
@@ -15,10 +13,10 @@ export class CNGSavingsCalculatorComponent {
     totalFuelBill: number;
     totalLitresPetrol: number;
     totalLitresCNG: number;
-    strTotalFuelBill: string;
-    strTotalLitresPetrol: string;
-    strTotalLitresCNG: string;
-    strSavings: string;
+    //strTotalFuelBill: string;
+    //strTotalLitresPetrol: string;
+    //strTotalLitresCNG: string;
+    //strSavings: string;
     barSelectedIndex: number;
 
     public fuelItems: Array<any> = [
@@ -39,13 +37,13 @@ export class CNGSavingsCalculatorComponent {
         this.barSelectedIndex = 0;
 
         this.totalFuelBill = this.cngSavings.vehicles * this.cngSavings.fuelBill;
-        this.strTotalFuelBill = this.totalFuelBill.toFixed(2); 
+        //this.strTotalFuelBill = this.totalFuelBill.toFixed(2); 
 
         this.totalLitresPetrol = this.cngSavings.fuelBill / this.cngSavings.petrolCost;
-        this.strTotalLitresPetrol = this.totalLitresPetrol.toFixed(2);
+        //this.strTotalLitresPetrol = this.totalLitresPetrol.toFixed(2);
 
         this.totalLitresCNG = this.cngSavings.fuelBill / this.cngSavings.cngCost;
-        this.strTotalLitresCNG = this.totalLitresCNG.toFixed(2);
+        //this.strTotalLitresCNG = this.totalLitresCNG.toFixed(2);
         
     }
 
@@ -65,16 +63,16 @@ export class CNGSavingsCalculatorComponent {
         }
 
         this.totalFuelBill = this.cngSavings.vehicles * this.cngSavings.fuelBill;
-        this.strTotalFuelBill = this.totalFuelBill.toFixed(2); 
+        //this.strTotalFuelBill = this.totalFuelBill.toFixed(2); 
 
         this.totalLitresPetrol = this.cngSavings.fuelBill / this.cngSavings.petrolCost;
-        this.strTotalLitresPetrol = this.totalLitresPetrol.toFixed(2);
+        //this.strTotalLitresPetrol = this.totalLitresPetrol.toFixed(2);
 
         this.totalLitresCNG = this.cngSavings.fuelBill / this.cngSavings.cngCost;
-        this.strTotalLitresCNG = this.totalLitresCNG.toFixed(2);
+        //this.strTotalLitresCNG = this.totalLitresCNG.toFixed(2);
 
         this.cngSavings.savings = this.totalFuelBill - this.totalLitresPetrol;
-        this.strSavings = this.cngSavings.savings.toFixed(2);
+        //this.strSavings = this.cngSavings.savings.toFixed(2);
     }
 
     clearForm() {
@@ -84,6 +82,10 @@ export class CNGSavingsCalculatorComponent {
         this.cngSavings.cngCost = 1;
         this.cngSavings.costToConvert = 0;
         this.cngSavings.savings = 0;
+
+        this.totalFuelBill = this.cngSavings.vehicles * this.cngSavings.fuelBill;
+        this.totalLitresPetrol = this.cngSavings.fuelBill / this.cngSavings.petrolCost;
+        this.totalLitresCNG = this.cngSavings.fuelBill / this.cngSavings.cngCost;
     }
 
     public selectedBarIndexChanged(bar) {

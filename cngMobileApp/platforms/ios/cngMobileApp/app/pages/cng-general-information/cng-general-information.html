@@ -1,4 +1,43 @@
 <ActionBar title="CNG General Information"></ActionBar>
 <StackLayout>
-    <Button text="CNG General Information"></Button>
+
+    <StackLayout orientation="horizontal">
+        <Button text="+" on-tap="add()"></Button>
+        <Border borderwidth="2" borderColor="#000000">
+            <TextField [ngModel]='cngCost | number:"1.2-2" ' (ngModel)='cngCost' editable="false"></TextField>
+        </Border>
+        <Button text="-" on-tap="subtract()"></Button>
+    </StackLayout>
+
+    
+    <!-- <Button text="CNG General Information" (on-tap)="getSegment()"></Button>
+    
+    <TextField [(ngModel)]="num1"></TextField>
+    <TextField [(ngModel)]="strNum1"></TextField>
+
+        <SegmentedBar #bar class="bar" [items]="barItems" [barSelectedIndex]="barSelectedIndex" 
+    (selectedIndexChange)="selectedBarIndexChanged(bar)"></SegmentedBar>
+
+    <ListPicker #picker class="picker" [items]="items" [selectedIndex]="selectedIndex" 
+    verticalAlignment="center" horizontalAlignment="center" (selectedIndexChange)="selectedIndexChanged(picker)"></ListPicker>
+
+     <StackLayout orientation="horizontal">
+        <Label text="1"></Label>
+        <Slider minValue="1" value="1" maxValue="3"></Slider>
+        <Label text="3"></Label>
+    </StackLayout> 
+
+    <StackLayout orientation="horizontal">
+        <Label text="1"></Label>
+        <ios>
+            <Slider minimumValue="1" maximumValue="3" value="2"></Slider>
+        </ios>
+        <Label text="3"></Label>
+    </StackLayout>
+
+    <TextField id="num2" [(ngModel)]="num2"></TextField>
+    <TextField id="num3" [(ngModel)]="num3"></TextField>
+
+    -->
+
 </StackLayout>

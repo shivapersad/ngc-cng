@@ -7,7 +7,14 @@ import {Router} from "@angular/router";
     styleUrls: ["pages/home/homepage-common.css", "pages/home/homepage.css"]
 })
 export class HomepageComponent {
-    constructor(private _router: Router){}
+
+    title: string;
+
+    constructor(private _router: Router){
+
+        this.title = "NGC CNG";
+
+    }
 
     goToNews(){
         console.log("News pressed");
@@ -47,10 +54,20 @@ export class HomepageComponent {
         console.log("Contact Us pressed");
         this._router.navigate(["/contact-us"]);
     }
-    // create folder structure and files
+    
     goToAboutNGCCNG(){
         console.log("About NGC CNG pressed");
         this._router.navigate(["/about-ngc-cng"]);
+    }
+
+    goToCNGSavingsCalculatorV2(){
+        console.log("CNG Savings Calc V2 pressed");
+        this._router.navigate(["/cng-savings-calculator-v2"]);
+    }
+
+    goToTesting() {
+        console.log("Testing Area pressed");
+        this._router.navigate(["/testing-area"]);
     }
 
 }

@@ -1,0 +1,45 @@
+<ActionBar [title]="title"></ActionBar>
+
+     <GridLayout columns="*, *, *" rows="*, *, *, *, *, * ,*" width="100%" height="100%">
+
+        <!-- <Image src="res://homepage" class="provider" row="0" col="0" rowSpan="2" colSpan="2"></Image> -->
+        <Label [text]="station['name']" class="leftBar" row="0" col="0" colSpan="2"></Label>
+        <Label [text]="station['address']" class="leftBar" row="1" col="0" colSpan="2" textWrap="true"></Label>
+        <Label [text]="station['telephone']" class="leftBar" row="2" col="0" colSpan="2" ></Label>
+
+        <Button text="Opening Times" class="openingTimes" textWrap="true" row="1" col="3"></Button>
+        <Button text="Navigate There" class="navigateThere" textWrap="true" row="2" col="3"></Button>
+
+        
+        <Label text="Facilities Available" class="lblFacilities" row="3" col="0" colSpan="3"></Label>
+        
+        <Image [ng-if]="cng" src="res://homepage" class="facilities" row="4" col="0"></Image>
+        <Label [ng-if]="cng" row="5" col="0"></Label>
+
+        <Image [ng-if]="atm" src="res://homepage" class="facilities" row="4" col="1"></Image>
+        <Label [ng-if]="atm" text="ATM" row="5" col="1"></Label>
+
+        <Image [ng-if]="shop" src="res://homepage" class="facilities" row="4" col="2"></Image>
+        <Label [ng-if]="shop" text="One Stop Shop" row="5" col="2"></Label>
+
+        <!-- 
+        <Image [*ngIf]="tyrePressure" src="res://homepage" class="facilities" row="4" col="0"></Image>
+        <Label [*ngIf]="tyrePressure" text="Tyre Pressure" row="6" col="0"></Label>
+
+        -->
+
+        <!--
+        <Image src="res://homepage" class="facilities" row="4" col="0"></Image>
+        
+        <Label text="Label" row="5" col="0"></Label>
+
+        <Image src="res://homepage" class="facilities" row="4" col="1"></Image>
+        
+        <Label text="Label2" row="5" col="1"></Label>
+        
+        <Image src="res://homepage" class="facilities" row="4" col="2"></Image>
+        
+        <Label text="Label3" row="5" col="2"></Label>
+        -->
+
+    </GridLayout>

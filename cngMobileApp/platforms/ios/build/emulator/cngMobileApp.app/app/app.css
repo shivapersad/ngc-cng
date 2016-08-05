@@ -1,4 +1,6 @@
-﻿button, label, stack-layout {
+﻿@import url("~/platform.css");
+
+button, label, stack-layout {
     horizontal-align: center;    
 }
 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/exploded-aar/cngMobileApp/runtime/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f8c8ebc987f6538a65f5cfd308d5984746999d79">
+        <dex dex="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/pre-dexed/F0/debug/cngMobileApp-runtime-unspecified_f09e87bb34ef8c53a9559cc97e93adeb2ceaafac.jar" />
+    </item>
+    <item
+        jar="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-appcompat-v7-23.4.0_058bb555ccc44a2ef0da0519b9cba60787d08369.jar" />
+    </item>
+    <item
+        jar="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/exploded-aar/cngMobileApp/binding-generator/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="cd7dd3d8b3faa7a457003b040d45b12c7e268dc6">
+        <dex dex="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/pre-dexed/F0/debug/cngMobileApp-binding-generator-unspecified_f5c120812af5c06bcbb656b0ee07a2c27104d1f6.jar" />
+    </item>
+    <item
+        jar="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-v4-23.4.0_5a92fd2436b88cb17daa307d0995690dc2404b83.jar" />
+    </item>
+    <item
+        jar="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-animated-vector-drawable-23.4.0_caa2909cac528bc8dd4b71eaddf6562408b2a190.jar" />
+    </item>
+    <item
+        jar="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-vector-drawable-23.4.0_2bcb21660e901aac28c7622c60bf994727a2d882.jar" />
+    </item>
+    <item
+        jar="/usr/local/opt/android-sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/pre-dexed/F0/debug/support-annotations-23.4.0_cff744a20a183c3ee3bde7040286b1eb5bb3626e.jar" />
+    </item>
+    <item
+        jar="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-23.4.0_fa8fbac05684387a968e5bf65c40743a21d1f4e4.jar" />
+    </item>
+    <item
+        jar="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/exploded-aar/widgets-release/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f2e5203427159d06a7104c1a113eee1c22e0ceb9">
+        <dex dex="/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/pre-dexed/F0/debug/intermediates-exploded-aar-widgets-release_8ceaf1289c3bdaa8a8332318d6453bc0af5506af.jar" />
+    </item>
+
+</items>

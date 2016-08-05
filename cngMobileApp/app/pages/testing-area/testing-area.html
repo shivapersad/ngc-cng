@@ -1,0 +1,12 @@
+<ActionBar [title]="title"></ActionBar>
+
+<StackLayout>
+    <ListView [items]="arr" (itemTap)="onItemTap($event)">
+        <template let-item="item" let-i="index">
+            <StackLayout>
+                <Label [text]="item.name"></Label>
+                <Label [text]="item.address"></Label>
+            </StackLayout>
+        </template>
+    </ListView>
+</StackLayout>

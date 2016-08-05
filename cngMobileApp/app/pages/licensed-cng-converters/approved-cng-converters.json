@@ -1,0 +1,39 @@
+{
+    "approved-converters":
+    {
+        "converter1":
+        {
+            "name": "ANSA Automotive",
+            "address": "Gaston Street, Chaguanas",
+            "phoneNumber": "(868)672-0991/0995",
+            "website": "www.ansaauto.com",
+            "emailAddress": "(none)",
+            "opening-times":
+            {
+                "Sunday": "0800-1700",
+                "Monday": "0800-1700",
+                "Tuesday": "0800-1700",
+                "Wednesday": "0800-1700",
+                "Thursday": "0800-1700",
+                "Friday": "0800-1700"
+            }
+        },
+        "converter2":
+        {
+            "name": "Dumore Enterprises",
+            "address": "St. Joseph Road, San Fernando",
+            "phoneNumber": "(868)652-4440",
+            "website": "www.dumore-enterprises.net",
+            "emailAddress": "industrial@dumore-enterprises.com",
+            "opening-times":
+            {
+                "Sunday": "0800-1700",
+                "Monday": "0800-1700",
+                "Tuesday": "0800-1700",
+                "Wednesday": "0800-1700",
+                "Thursday": "0800-1700",
+                "Friday": "0800-1700"
+            }
+        }
+    }
+}
