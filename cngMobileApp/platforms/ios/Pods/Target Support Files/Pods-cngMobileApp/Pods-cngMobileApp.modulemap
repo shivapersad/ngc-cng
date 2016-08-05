@@ -1,0 +1,6 @@
+framework module Pods_cngMobileApp {
+  umbrella header "Pods-cngMobileApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

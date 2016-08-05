@@ -1,3 +1,12 @@
+/*
+NOTES
+Able to retrieve information from the Array
+Able to display homepage image as a placeholder
+Unable to display notAvailable image presently
+
+*/
+
+
 import {Component} from "@angular/core";
 import {Router, ActivatedRoute} from "@angular/router";
 import {ContactForm} from '../../../shared/interfaces'
@@ -18,6 +27,10 @@ export class StationComponent {
     atm: boolean;
     shop: boolean;
     tyrePressure: boolean;
+    imgCNG: string;
+    imgATM: string;
+    imgShop: string;
+    imgTyrePressure: string;
 
     arr: Array<any> = [
 
@@ -28,7 +41,7 @@ export class StationComponent {
             "telephone" : "(868)641-0001",
             "email" : "station1@gmail.com",
             "facilities" : {
-                "cng" : "y",
+                "cng" : "n",
                 "atm" : "n",
                 "shop" : "y",
                 "tyrePressure" : "y"
@@ -87,18 +100,43 @@ export class StationComponent {
 
         if (this.facilities['cng'] === "y") {
             this.cng = true;
+            this.imgCNG = "res://homepage";
+            console.log("CNG Image: " + this.imgCNG);
+            
+        }
+        else {
+            this.imgCNG = "res://notAvailable";
+            console.log("CNG Image: " + this.imgCNG);
         }
 
         if (this.facilities['atm'] === "y") {
             this.atm = true;
+            this.imgATM = "res://homepage";
+            console.log("ATM Image: " + this.imgATM);
+        }
+        else {
+            this.imgATM = "res://notAvailable";
+            console.log("ATM Image: " + this.imgATM);
         }
 
         if (this.facilities['shop'] === "y") {
             this.shop = true;
+            this.imgShop = "res://homepage";
+            console.log("Shop Image: " + this.imgShop);
+        }
+        else {
+            this.imgShop = "res://notAvailable";
+            console.log("Shop Image: " + this.imgShop);
         }
 
         if (this.facilities['tyrePressure'] === "y") {
             this.tyrePressure = true;
+            this.imgTyrePressure = "res://homepage";
+            console.log("Tyre Pressure Image: " + this.imgTyrePressure);
+        }
+        else {
+            this.imgTyrePressure = "res://notAvailable";
+            console.log("Tyre Pressure Image: " + this.imgTyrePressure);
         }
 
         console.log("CNG: " + this.cng);

@@ -6,20 +6,21 @@
 	objectVersion = 46;
 	objects = {
 /* Begin PBXBuildFile section */
+		319B8E260B8748E6A7AD96B9 /* TNSWidgets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 016992CC7A4F4B1F9D82464C /* TNSWidgets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		338DAC6276CB4AE0B9CAB905 /* notAvailable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EACA08CB0E4D078B32922F /* notAvailable@2x.png */; };
+		4D60927FAC403F0FF53B8941 /* Pods_cngMobileApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9569D7B0F65496893C71C7EE /* Pods_cngMobileApp.framework */; };
+		4E59D4B129C14BC682171E50 /* homepage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2274461DD8945A69797E889 /* homepage@3x.png */; };
+		5864A0ACEC884C20B321C312 /* homepage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA8E05E30F1484987FB2C92 /* homepage@2x.png */; };
 		858B842D18CA22B800AB12DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 858B833A18CA111C00AB12DE /* InfoPlist.strings */; };
+		9BD863117A3643ECB86A87C5 /* homepage.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B04D2F4C3C42D69B357A52 /* homepage.png */; };
+		B64E58A5471448DEBF688A51 /* notAvailable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5401663CFFF04A05A42A7AE7 /* notAvailable@3x.png */; };
+		B8837992229F44299DCF3194 /* TNSWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016992CC7A4F4B1F9D82464C /* TNSWidgets.framework */; };
+		C49CB4B9F4A84F82BB93364E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE9D35ACB7A41DAAF40D46F /* Assets.xcassets */; };
+		C50B7552242E451A8727849A /* notAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4B7758F6864D3597B0662D /* notAvailable.png */; };
 		CD45EE7C18DC2D5800FB50C0 /* app in Resources */ = {isa = PBXBuildFile; fileRef = CD45EE7A18DC2D5800FB50C0 /* app */; };
 		CD62955D1BB2678900AE3A93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD62955C1BB2678900AE3A93 /* main.m */; };
-		C49CB4B9F4A84F82BB93364E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE9D35ACB7A41DAAF40D46F /* Assets.xcassets */; };
-		DFC5312EB2F644BCA7161AAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105D23B67E0B4E0EB3EF8018 /* LaunchScreen.storyboard */; };
 		D569940235B54A43939BF35B /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EA751FEFF1124AC6B8C2002D /* build.xcconfig */; };
-		B8837992229F44299DCF3194 /* TNSWidgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016992CC7A4F4B1F9D82464C /* TNSWidgets.framework */; };
-		319B8E260B8748E6A7AD96B9 /* TNSWidgets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 016992CC7A4F4B1F9D82464C /* TNSWidgets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9BD863117A3643ECB86A87C5 /* homepage.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B04D2F4C3C42D69B357A52 /* homepage.png */; };
-		5864A0ACEC884C20B321C312 /* homepage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA8E05E30F1484987FB2C92 /* homepage@2x.png */; };
-		4E59D4B129C14BC682171E50 /* homepage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2274461DD8945A69797E889 /* homepage@3x.png */; };
-		338DAC6276CB4AE0B9CAB905 /* notAvailable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EACA08CB0E4D078B32922F /* notAvailable@2x.png */; };
-		B64E58A5471448DEBF688A51 /* notAvailable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5401663CFFF04A05A42A7AE7 /* notAvailable@3x.png */; };
-		C50B7552242E451A8727849A /* notAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = EE4B7758F6864D3597B0662D /* notAvailable.png */; };
+		DFC5312EB2F644BCA7161AAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105D23B67E0B4E0EB3EF8018 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,26 +38,27 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		016992CC7A4F4B1F9D82464C /* TNSWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TNSWidgets.framework; path = ../../lib/iOS/TNSWidgets.framework; sourceTree = "<group>"; };
+		01EACA08CB0E4D078B32922F /* notAvailable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notAvailable@2x.png"; path = "cngMobileApp/Resources/notAvailable@2x.png"; sourceTree = "<group>"; };
+		0FA8E05E30F1484987FB2C92 /* homepage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "homepage@2x.png"; path = "cngMobileApp/Resources/homepage@2x.png"; sourceTree = "<group>"; };
+		105D23B67E0B4E0EB3EF8018 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = LaunchScreen.storyboard; path = cngMobileApp/Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		50B04D2F4C3C42D69B357A52 /* homepage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homepage.png; path = cngMobileApp/Resources/homepage.png; sourceTree = "<group>"; };
+		5401663CFFF04A05A42A7AE7 /* notAvailable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notAvailable@3x.png"; path = "cngMobileApp/Resources/notAvailable@3x.png"; sourceTree = "<group>"; };
 		858B832E18CA111C00AB12DE /* cngMobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cngMobileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858B833918CA111C00AB12DE /* cngMobileApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cngMobileApp-Info.plist"; sourceTree = "<group>"; };
 		858B833B18CA111C00AB12DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		858B833F18CA111C00AB12DE /* cngMobileApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cngMobileApp-Prefix.pch"; sourceTree = "<group>"; };
 		858B843318CA22B800AB12DE /* cngMobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cngMobileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9569D7B0F65496893C71C7EE /* Pods_cngMobileApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cngMobileApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD45EE7A18DC2D5800FB50C0 /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
 		CD62955C1BB2678900AE3A93 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = internal/main.m; sourceTree = SOURCE_ROOT; };
 		CDD59A261BB43B5D00EC2671 /* build-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "build-debug.xcconfig"; sourceTree = "<group>"; };
 		CDD59A271BB43B5D00EC2671 /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "build-release.xcconfig"; sourceTree = "<group>"; };
 		CDF4743E1BA4855C0087EA85 /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
-		CEE9D35ACB7A41DAAF40D46F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = Assets.xcassets; path = "cngMobileApp/Resources/Assets.xcassets"; sourceTree = "<group>"; fileEncoding = 4; };
-		105D23B67E0B4E0EB3EF8018 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = LaunchScreen.storyboard; path = "cngMobileApp/Resources/LaunchScreen.storyboard"; sourceTree = "<group>"; fileEncoding = 4; };
-		EA751FEFF1124AC6B8C2002D /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = build.xcconfig; path = "cngMobileApp/Resources/build.xcconfig"; sourceTree = "<group>"; fileEncoding = 4; };
-		016992CC7A4F4B1F9D82464C /* TNSWidgets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TNSWidgets.framework; path = "../../lib/iOS/TNSWidgets.framework"; sourceTree = "<group>"; };
-		50B04D2F4C3C42D69B357A52 /* homepage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homepage.png; path = "cngMobileApp/Resources/homepage.png"; sourceTree = "<group>"; };
-		0FA8E05E30F1484987FB2C92 /* homepage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "homepage@2x.png"; path = "cngMobileApp/Resources/homepage@2x.png"; sourceTree = "<group>"; };
+		CEE9D35ACB7A41DAAF40D46F /* Assets.xcassets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = Assets.xcassets; path = cngMobileApp/Resources/Assets.xcassets; sourceTree = "<group>"; };
+		EA751FEFF1124AC6B8C2002D /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; name = build.xcconfig; path = cngMobileApp/Resources/build.xcconfig; sourceTree = "<group>"; };
+		EE4B7758F6864D3597B0662D /* notAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notAvailable.png; path = cngMobileApp/Resources/notAvailable.png; sourceTree = "<group>"; };
 		F2274461DD8945A69797E889 /* homepage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "homepage@3x.png"; path = "cngMobileApp/Resources/homepage@3x.png"; sourceTree = "<group>"; };
-		01EACA08CB0E4D078B32922F /* notAvailable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notAvailable@2x.png"; path = "cngMobileApp/Resources/notAvailable@2x.png"; sourceTree = "<group>"; };
-		5401663CFFF04A05A42A7AE7 /* notAvailable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notAvailable@3x.png"; path = "cngMobileApp/Resources/notAvailable@3x.png"; sourceTree = "<group>"; };
-		EE4B7758F6864D3597B0662D /* notAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notAvailable.png; path = "cngMobileApp/Resources/notAvailable.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8837992229F44299DCF3194 /* TNSWidgets.framework in Frameworks */,
+				4D60927FAC403F0FF53B8941 /* Pods_cngMobileApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +81,7 @@
 				858B833718CA111C00AB12DE /* cngMobileApp */,
 				858B833018CA111C00AB12DE /* Frameworks */,
 				858B832F18CA111C00AB12DE /* Products */,
+				C71A5CEFA39FC4606C8E0E15 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				016992CC7A4F4B1F9D82464C /* TNSWidgets.framework */,
+				9569D7B0F65496893C71C7EE /* Pods_cngMobileApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,6 +126,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C71A5CEFA39FC4606C8E0E15 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E070579D1B39A9D000214BF1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +156,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 858B843018CA22B800AB12DE /* Build configuration list for PBXNativeTarget "cngMobileApp" */;
 			buildPhases = (
+				66CCF985D3BAB2C27A27935C /* [CP] Check Pods Manifest.lock */,
 				C97FD7AC1ADE5369004DB2A4 /* NativeScript PreBuild */,
 				858B83F218CA22B800AB12DE /* Sources */,
 				CD62955B1BB2651D00AE3A93 /* NativeScript PreLink */,
@@ -151,6 +164,8 @@
 				858B842C18CA22B800AB12DE /* Resources */,
 				85F5BDFC1A9363BE006B9701 /* Embed Frameworks */,
 				CD3EAD351B05FF060042DBFC /* NativeScript PostBuild */,
+				FCB6C34C2062C6E8EB746CFA /* [CP] Embed Pods Frameworks */,
+				584ED4CDA93D8E49E35B7273 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,6 +225,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		584ED4CDA93D8E49E35B7273 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cngMobileApp/Pods-cngMobileApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66CCF985D3BAB2C27A27935C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		C97FD7AC1ADE5369004DB2A4 /* NativeScript PreBuild */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,6 +298,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$SRCROOT/internal/nativescript-pre-link\"";
+			showEnvVarsInLog = 0;
+		};
+		FCB6C34C2062C6E8EB746CFA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cngMobileApp/Pods-cngMobileApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -360,6 +420,10 @@
 				CLANG_ENABLE_MODULES = NO;
 				CLANG_MODULES_AUTOLINK = NO;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"../../lib/iOS\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cngMobileApp/cngMobileApp-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -371,10 +435,6 @@
 				PRODUCT_NAME = cngMobileApp;
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"../../lib/iOS\"",
-				);
 			};
 			name = Debug;
 		};
@@ -386,6 +446,10 @@
 				CLANG_ENABLE_MODULES = NO;
 				CLANG_MODULES_AUTOLINK = NO;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"../../lib/iOS\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cngMobileApp/cngMobileApp-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/cngMobileApp/cngMobileApp-Info.plist";
@@ -393,10 +457,6 @@
 				PRODUCT_NAME = cngMobileApp;
 				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"../../lib/iOS\"",
-				);
 			};
 			name = Release;
 		};

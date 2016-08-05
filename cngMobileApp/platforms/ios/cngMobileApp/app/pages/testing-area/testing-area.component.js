@@ -1,63 +1,55 @@
 "use strict";
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
+var mapbox = require("nativescript-mapbox");
 var TestingAreaComponent = (function () {
-    function TestingAreaComponent(_router) {
-        this._router = _router;
-        this.arr = [
-            {
-                "id": "0",
-                "name": "Station 1",
-                "address": "100 Broomhill Road, Chaguanas",
-                "telephone": "(868)641-0001",
-                "email": "station1@gmail.com",
-                "facilities": {
-                    "cng": "y",
-                    "atm": "n",
-                    "shop": "y",
-                    "tyrePressure": "y"
-                }
+    function TestingAreaComponent() {
+        this.title = "Testing Area";
+        var accessToken = 'pk.eyJ1Ijoic2hpdmFwZXJzYWQiLCJhIjoiY2lyaHNhczlrMDA0bGo3bTV5NDN3ZWxmdiJ9.S9s8AXgyuKhXiLbV5dR7KQ';
+        mapbox.show({
+            accessToken: accessToken,
+            style: mapbox.MapStyle.OUTDOORS,
+            margins: {
+                left: 32,
+                right: 32,
+                top: 300,
+                bottom: 50
             },
-            {
-                "id": "1",
-                "name": "Station 2",
-                "address": "200 Broomhill Road, Chaguanas",
-                "telephone": "(868)642-0001",
-                "email": "station1@gmail.com",
-                "facilities": {
-                    "cng": "y",
-                    "atm": "y",
-                    "shop": "y",
-                    "tyrePressure": "y"
-                }
+            center: {
+                lat: 52.3702160,
+                lng: 4.8951680
             },
-            {
-                "id": "2",
-                "name": "Station 3",
-                "address": "300 Broomhill Road, Chaguanas",
-                "telephone": "(868)643-0001",
-                "email": "station1@gmail.com",
-                "facilities": {
-                    "cng": "y",
-                    "atm": "n",
-                    "shop": "n",
-                    "tyrePressure": "n"
+            zoomLevel: 9,
+            showUserLocation: true,
+            hideAttribution: true,
+            hideLogo: true,
+            hideCompass: false,
+            disableRotation: false,
+            disableScroll: false,
+            disableZoom: false,
+            disableTilt: false,
+            markers: [
+                {
+                    lat: 52.3732160,
+                    lng: 4.8941680,
+                    title: 'Nice location',
+                    subtitle: 'Really really nice location',
+                    iconPath: 'res/markers/green_pin_marker.png',
+                    onTap: function () { console.log("'Nice location' marker tapped"); },
+                    onCalloutTap: function () { console.log("'Nice location' marker callout tapped"); }
                 }
-            }
-        ];
-        this.title = "CNG Refuelling Stations (List)";
-        console.log("Array size: " + this.arr.length);
+            ]
+        }).then(function (result) {
+            console.log("Mapbox show done");
+        }, function (error) {
+            console.log("mapbox show error: " + error);
+        });
     }
-    TestingAreaComponent.prototype.onItemTap = function (args) {
-        console.log("Tapped Item: " + args.index);
-        this._router.navigate(["/station/" + args.index]);
-    };
     TestingAreaComponent = __decorate([
         core_1.Component({
             templateUrl: "pages/testing-area/testing-area.html",
             styleUrls: ["pages/testing-area/testing-area-common.css"]
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [])
     ], TestingAreaComponent);
     return TestingAreaComponent;
 }());

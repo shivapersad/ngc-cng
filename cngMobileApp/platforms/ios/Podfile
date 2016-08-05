@@ -1,0 +1,8 @@
+use_frameworks!
+
+target "cngMobileApp" do
+# Begin Podfile - /Users/shivapersad/Projects/ngc-cng/cngMobileApp/node_modules/nativescript-mapbox/platforms/ios/Podfile 
+ pod 'Mapbox-iOS-SDK', '~> 3.2' 
+ # End Podfile 
+
+end

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MGLStyle Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    <link rel='shortcut icon' href='https://www.mapbox.com/img/favicon.ico' type='image/x-icon' />
+
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/MGLStyle" class="dashAnchor"></a>
+    <a title="MGLStyle Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Mapbox iOS SDK Docs</a></p>
+        <p class="header-right"><a href="https://github.com/mapbox/mapbox-gl-native"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fwww%2Emapbox%2Ecom%2Fios%2Dsdk%2Fdocsets%2FMapbox%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Mapbox iOS SDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        MGLStyle Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Map.html">Map</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/MGLAccountManager.html">MGLAccountManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLMapCamera.html">MGLMapCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLMapView.html">MGLMapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLMapViewDelegate.html">MGLMapViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLStyle.html">MGLStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Map.html#/c:MGLStyle.h@MGLStyleDefaultVersion">MGLStyleDefaultVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MGLUserTrackingMode.html">MGLUserTrackingMode</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Annotations.html">Annotations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLAnnotation.html">MGLAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLAnnotationImage.html">MGLAnnotationImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MGLAnnotationVerticalAlignment.html">MGLAnnotationVerticalAlignment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLCalloutView.html">MGLCalloutView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLCalloutViewDelegate.html">MGLCalloutViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLMultiPoint.html">MGLMultiPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLPointAnnotation.html">MGLPointAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLPolygon.html">MGLPolygon</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLPolyline.html">MGLPolyline</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLOverlay.html">MGLOverlay</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLShape.html">MGLShape</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLUserLocation.html">MGLUserLocation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Offline Storage.html">Offline Storage</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:objc(pl)MGLOfflineRegion">MGLOfflineRegion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLOfflineStorage.html">MGLOfflineStorage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLOfflinePack.html">MGLOfflinePack</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:MGLOfflineStorage.h@T@MGLOfflinePackAdditionCompletionHandler">MGLOfflinePackAdditionCompletionHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackErrorNotification">MGLOfflinePackErrorNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackErrorUserInfoKey">MGLOfflinePackErrorUserInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackMaximumCountUserInfoKey">MGLOfflinePackMaximumCountUserInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackMaximumMapboxTilesReachedNotification">MGLOfflinePackMaximumMapboxTilesReachedNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MGLOfflinePackProgress.html">MGLOfflinePackProgress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackProgressChangedNotification">MGLOfflinePackProgressChangedNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackProgressUserInfoKey">MGLOfflinePackProgressUserInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:MGLOfflineStorage.h@T@MGLOfflinePackRemovalCompletionHandler">MGLOfflinePackRemovalCompletionHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MGLOfflinePackState.html">MGLOfflinePackState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackStateUserInfoKey">MGLOfflinePackStateUserInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLTilePyramidOfflineRegion.html">MGLTilePyramidOfflineRegion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Categories/NSValue(MGLOfflinePackAdditions).html">NSValue(MGLOfflinePackAdditions)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Geometry.html">Geometry</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/MGLCoordinateBounds.html">MGLCoordinateBounds</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsEqualToCoordinateBounds">MGLCoordinateBoundsEqualToCoordinateBounds</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsGetCoordinateSpan">MGLCoordinateBoundsGetCoordinateSpan</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsIsEmpty">MGLCoordinateBoundsIsEmpty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsMake">MGLCoordinateBoundsMake</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsOffset">MGLCoordinateBoundsOffset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MGLCoordinateSpan.html">MGLCoordinateSpan</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateSpanEqualToCoordinateSpan">MGLCoordinateSpanEqualToCoordinateSpan</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateSpanMake">MGLCoordinateSpanMake</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:@MGLCoordinateSpanZero">MGLCoordinateSpanZero</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLDegreesFromRadians">MGLDegreesFromRadians</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLRadiansFromDegrees">MGLRadiansFromDegrees</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLStringFromCoordinateBounds">MGLStringFromCoordinateBounds</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Constants.html">Other Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Constants.html#/c:@MGLErrorDomain">MGLErrorDomain</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Enums.html">Other Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/MGLMapDebugMaskOptions.html">MGLMapDebugMaskOptions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Type Definitions.html">Other Type Definitions</a>
+            <ul class="nav-group-tasks">
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MGLStyle</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">MGLStyle</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>A collection of convenience methods for creating style URLs of default styles provided by Mapbox. <a href="https://www.mapbox.com/maps/">Learn more about Mapbox default styles</a>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MGLStyle(cm)streetsStyleURL"></a>
+                    <a name="//apple_ref/objc/Method/+streetsStyleURL" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MGLStyle(cm)streetsStyleURL">+streetsStyleURL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the URL to version 8 of the <a href="https://www.mapbox.com/maps/streets/">Mapbox Streets</a> style.</p>
+
+<p>Streets is a general-purpose style with detailed road and transit networks.</p>
+
+<p><code><a href="../Classes/MGLMapView.html">MGLMapView</a></code> and <code><a href="../Classes/MGLTilePyramidOfflineRegion.html">MGLTilePyramidOfflineRegion</a></code> use Mapbox Streets when no style is specified explicitly.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">streetsStyleURL</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">streetsStyleURL</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLStyle.h#L28">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MGLStyle(cm)streetsStyleURLWithVersion:"></a>
+                    <a name="//apple_ref/objc/Method/+streetsStyleURLWithVersion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MGLStyle(cm)streetsStyleURLWithVersion:">+streetsStyleURLWithVersion:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the URL to the given version of the <a href="https://www.mapbox.com/maps/streets/">Mapbox Streets</a> style.</p>
+
+<p>Streets is a general-purpose style with detailed road and transit networks.</p>
+
+<p><code><a href="../Classes/MGLMapView.html">MGLMapView</a></code> and <code><a href="../Classes/MGLTilePyramidOfflineRegion.html">MGLTilePyramidOfflineRegion</a></code> use Mapbox Streets when no style is specified explicitly.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nf">streetsStyleURLWithVersion</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">version</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">streetsStyleURLWithVersion</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>version</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The style’s latest released version. As of publication, the current version is <code>9</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLStyle.h#L39">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MGLStyle(cm)emeraldStyleURL"></a>
+                    <a name="//apple_ref/objc/Method/+emeraldStyleURL" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MGLStyle(cm)emeraldStyleURL">+emeraldStyleURL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the URL to version 8 of the <a href="https://www.mapbox.com/blog/emerald-gl/">Mapbox Emerald</a> style.</p>
+
+<p>Emerald is a tactile style with subtle textures and dramatic hillshading.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">emeraldStyleURL</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">emeraldStyleURL</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLStyle.h#L46">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MGLStyle(cm)outdoorsStyleURLWithVersion:"></a>
+                    <a name="//apple_ref/objc/Method/+outdoorsStyleURLWithVersion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MGLStyle(cm)outdoorsStyleURLWithVersion:">+outdoorsStyleURLWithVersion:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the URL to the given version of the <a href="https://www.mapbox.com/maps/outdoors/">Mapbox Outdoors</a> style.</p>
+
+<p>Outdoors is a general-purpose style tailored to outdoor activities.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nf">outdoorsStyleURLWithVersion</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">version</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">outdoorsStyleURLWithVersion</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>version</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The style’s latest released version. As of publication, the current version is <code>9</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLStyle.h#L55">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MGLStyle(cm)lightStyleURL"></a>
+                    <a name="//apple_ref/objc/Method/+lightStyleURL" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MGLStyle(cm)lightStyleURL">+lightStyleURL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the URL to version 8 of the <a href="https://www.mapbox.com/maps/light-dark/">Mapbox Light</a> style.</p>
+
+<p>Light is a subtle, light-colored backdrop for data visualizations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">lightStyleURL</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">lightStyleURL</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLStyle.h#L62">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MGLStyle(cm)lightStyleURLWithVersion:"></a>
+                    <a name="//apple_ref/objc/Method/+lightStyleURLWithVersion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MGLStyle(cm)lightStyleURLWithVersion:">+lightStyleURLWithVersion:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the URL to the given version of the <a href="https://www.mapbox.com/maps/light-dark/">Mapbox Light</a> style.</p>
+
+<p>Light is a subtle, light-colored backdrop for data visualizations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nf">lightStyleURLWithVersion</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">version</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">lightStyleURLWithVersion</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>version</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The style’s latest released version. As of publication, the current version is <code>9</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLStyle.h#L71">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MGLStyle(cm)darkStyleURL"></a>
+                    <a name="//apple_ref/objc/Method/+darkStyleURL" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MGLStyle(cm)darkStyleURL">+darkStyleURL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the URL to version 8 of the <a href="https://www.mapbox.com/maps/light-dark/">Mapbox Dark</a> style.</p>
+
+<p>Dark is a subtle, dark-colored backdrop for data visualizations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">darkStyleURL</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">darkStyleURL</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLStyle.h#L78">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MGLStyle(cm)darkStyleURLWithVersion:"></a>
+                    <a name="//apple_ref/objc/Method/+darkStyleURLWithVersion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MGLStyle(cm)darkStyleURLWithVersion:">+darkStyleURLWithVersion:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the URL to the given version of the <a href="https://www.mapbox.com/maps/light-dark/">Mapbox Dark</a> style.</p>
+
+<p>Dark is a subtle, dark-colored backdrop for data visualizations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nf">darkStyleURLWithVersion</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">version</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">darkStyleURLWithVersion</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>version</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The style’s latest released version. As of publication, the current version is <code>9</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLStyle.h#L87">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MGLStyle(cm)satelliteStyleURL"></a>
+                    <a name="//apple_ref/objc/Method/+satelliteStyleURL" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MGLStyle(cm)satelliteStyleURL">+satelliteStyleURL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the URL to version 8 of the <a href="https://www.mapbox.com/maps/satellite/">Mapbox Satellite</a> style.</p>
+
+<p>Satellite is high-resolution satellite and aerial imagery.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">satelliteStyleURL</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">satelliteStyleURL</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLStyle.h#L94">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MGLStyle(cm)satelliteStyleURLWithVersion:"></a>
+                    <a name="//apple_ref/objc/Method/+satelliteStyleURLWithVersion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MGLStyle(cm)satelliteStyleURLWithVersion:">+satelliteStyleURLWithVersion:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the URL to the given version of the <a href="https://www.mapbox.com/maps/satellite/">Mapbox Satellite</a> style.</p>
+
+<p>Satellite is high-resolution satellite and aerial imagery.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nf">satelliteStyleURLWithVersion</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">version</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">satelliteStyleURLWithVersion</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>version</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The style’s latest released version. As of publication, the current version is <code>9</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLStyle.h#L103">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MGLStyle(cm)hybridStyleURL"></a>
+                    <a name="//apple_ref/objc/Method/+hybridStyleURL" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MGLStyle(cm)hybridStyleURL">+hybridStyleURL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the URL to version 8 of the <a href="https://www.mapbox.com/maps/satellite/">Mapbox Satellite Streets</a> style.</p>
+
+<p>Satellite Streets combines the high-resolution satellite and aerial imagery of Mapbox Satellite with unobtrusive labels and translucent roads from Mapbox Streets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">hybridStyleURL</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">hybridStyleURL</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLStyle.h#L110">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MGLStyle(cm)satelliteStreetsStyleURLWithVersion:"></a>
+                    <a name="//apple_ref/objc/Method/+satelliteStreetsStyleURLWithVersion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MGLStyle(cm)satelliteStreetsStyleURLWithVersion:">+satelliteStreetsStyleURLWithVersion:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the URL to the given version of the <a href="https://www.mapbox.com/maps/satellite/">Mapbox Satellite Streets</a> style.</p>
+
+<p>Satellite Streets combines the high-resolution satellite and aerial imagery of Mapbox Satellite with unobtrusive labels and translucent roads from Mapbox Streets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nf">satelliteStreetsStyleURLWithVersion</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">version</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">satelliteStreetsStyleURLWithVersion</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>version</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The style’s latest released version. As of publication, the current version is <code>9</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLStyle.h#L119">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2014–2016 <a class="link" href="https://www.mapbox.com/" target="_blank" rel="external">Mapbox</a>. See <a class="link" href="https://github.com/mapbox/mapbox-gl-native/blob/master/LICENSE.md" target="_blank" rel="external">license</a> for more details.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

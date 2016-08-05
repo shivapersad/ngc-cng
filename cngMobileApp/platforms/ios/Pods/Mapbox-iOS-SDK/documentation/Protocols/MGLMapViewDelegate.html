@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MGLMapViewDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    <link rel='shortcut icon' href='https://www.mapbox.com/img/favicon.ico' type='image/x-icon' />
+
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Protocol/MGLMapViewDelegate" class="dashAnchor"></a>
+    <a title="MGLMapViewDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Mapbox iOS SDK Docs</a></p>
+        <p class="header-right"><a href="https://github.com/mapbox/mapbox-gl-native"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fwww%2Emapbox%2Ecom%2Fios%2Dsdk%2Fdocsets%2FMapbox%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Mapbox iOS SDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        MGLMapViewDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Map.html">Map</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/MGLAccountManager.html">MGLAccountManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLMapCamera.html">MGLMapCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLMapView.html">MGLMapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLMapViewDelegate.html">MGLMapViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLStyle.html">MGLStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Map.html#/c:MGLStyle.h@MGLStyleDefaultVersion">MGLStyleDefaultVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MGLUserTrackingMode.html">MGLUserTrackingMode</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Annotations.html">Annotations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLAnnotation.html">MGLAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLAnnotationImage.html">MGLAnnotationImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MGLAnnotationVerticalAlignment.html">MGLAnnotationVerticalAlignment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLCalloutView.html">MGLCalloutView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLCalloutViewDelegate.html">MGLCalloutViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLMultiPoint.html">MGLMultiPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLPointAnnotation.html">MGLPointAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLPolygon.html">MGLPolygon</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLPolyline.html">MGLPolyline</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLOverlay.html">MGLOverlay</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLShape.html">MGLShape</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLUserLocation.html">MGLUserLocation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Offline Storage.html">Offline Storage</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:objc(pl)MGLOfflineRegion">MGLOfflineRegion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLOfflineStorage.html">MGLOfflineStorage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLOfflinePack.html">MGLOfflinePack</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:MGLOfflineStorage.h@T@MGLOfflinePackAdditionCompletionHandler">MGLOfflinePackAdditionCompletionHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackErrorNotification">MGLOfflinePackErrorNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackErrorUserInfoKey">MGLOfflinePackErrorUserInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackMaximumCountUserInfoKey">MGLOfflinePackMaximumCountUserInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackMaximumMapboxTilesReachedNotification">MGLOfflinePackMaximumMapboxTilesReachedNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MGLOfflinePackProgress.html">MGLOfflinePackProgress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackProgressChangedNotification">MGLOfflinePackProgressChangedNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackProgressUserInfoKey">MGLOfflinePackProgressUserInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:MGLOfflineStorage.h@T@MGLOfflinePackRemovalCompletionHandler">MGLOfflinePackRemovalCompletionHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MGLOfflinePackState.html">MGLOfflinePackState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackStateUserInfoKey">MGLOfflinePackStateUserInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLTilePyramidOfflineRegion.html">MGLTilePyramidOfflineRegion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Categories/NSValue(MGLOfflinePackAdditions).html">NSValue(MGLOfflinePackAdditions)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Geometry.html">Geometry</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/MGLCoordinateBounds.html">MGLCoordinateBounds</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsEqualToCoordinateBounds">MGLCoordinateBoundsEqualToCoordinateBounds</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsGetCoordinateSpan">MGLCoordinateBoundsGetCoordinateSpan</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsIsEmpty">MGLCoordinateBoundsIsEmpty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsMake">MGLCoordinateBoundsMake</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsOffset">MGLCoordinateBoundsOffset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MGLCoordinateSpan.html">MGLCoordinateSpan</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateSpanEqualToCoordinateSpan">MGLCoordinateSpanEqualToCoordinateSpan</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateSpanMake">MGLCoordinateSpanMake</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:@MGLCoordinateSpanZero">MGLCoordinateSpanZero</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLDegreesFromRadians">MGLDegreesFromRadians</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLRadiansFromDegrees">MGLRadiansFromDegrees</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLStringFromCoordinateBounds">MGLStringFromCoordinateBounds</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Constants.html">Other Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Constants.html#/c:@MGLErrorDomain">MGLErrorDomain</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Enums.html">Other Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/MGLMapDebugMaskOptions.html">MGLMapDebugMaskOptions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Type Definitions.html">Other Type Definitions</a>
+            <ul class="nav-group-tasks">
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MGLMapViewDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="k">@protocol</span> <span class="nc">MGLMapViewDelegate</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>The MGLMapViewDelegate protocol defines a set of optional methods that you can use to receive map-related update messages. Because many map operations require the <code><a href="../Classes/MGLMapView.html">MGLMapView</a></code> class to load data asynchronously, the map view calls these methods to notify your application when specific operations complete. The map view also uses these methods to request annotation marker symbology and to manage interactions with those markers.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Responding%20to%20Map%20Position%20Changes"></a>
+                <a name="//apple_ref/objc/Section/Responding to Map Position Changes" class="dashAnchor"></a>
+                <a href="#/Responding%20to%20Map%20Position%20Changes">
+                  <h3 class="section-name">Responding to Map Position Changes</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:regionWillChangeAnimated:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:regionWillChangeAnimated:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:regionWillChangeAnimated:">-mapView:regionWillChangeAnimated:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the region displayed by the map view is about to change.</p>
+
+<p>This method is called whenever the currently displayed map region will start changing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">regionWillChangeAnimated</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapView</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">,</span> <span class="n">regionWillChangeAnimated</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view whose visible region will change.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether the change will cause an animated effect on the map.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1009">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapViewRegionIsChanging:"></a>
+                    <a name="//apple_ref/objc/Method/-mapViewRegionIsChanging:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapViewRegionIsChanging:">-mapViewRegionIsChanging:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the region displayed by the map view is changing.</p>
+
+<p>This method is called whenever the currently displayed map region changes. During movement, this method may be called many times to report updates to the map position. Therefore, your implementation of this method should be as lightweight as possible to avoid affecting performance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapViewRegionIsChanging</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapViewRegionIsChanging</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view whose visible region is changing.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1018">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:regionDidChangeAnimated:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:regionDidChangeAnimated:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:regionDidChangeAnimated:">-mapView:regionDidChangeAnimated:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the region displayed by the map view just changed.</p>
+
+<p>This method is called whenever the currently displayed map region has finished changing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">regionDidChangeAnimated</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapView</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">,</span> <span class="n">regionDidChangeAnimated</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view whose visible region changed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether the change caused an animated effect on the map.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1028">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Loading%20the%20Map"></a>
+                <a name="//apple_ref/objc/Section/Loading the Map" class="dashAnchor"></a>
+                <a href="#/Loading%20the%20Map">
+                  <h3 class="section-name">Loading the Map</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapViewWillStartLoadingMap:"></a>
+                    <a name="//apple_ref/objc/Method/-mapViewWillStartLoadingMap:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapViewWillStartLoadingMap:">-mapViewWillStartLoadingMap:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the map view will begin to load.</p>
+
+<p>This method is called whenever the map view starts loading, including when a new style has been set and the map must reload.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapViewWillStartLoadingMap</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapViewWillStartLoadingMap</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view that is starting to load.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1039">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapViewDidFinishLoadingMap:"></a>
+                    <a name="//apple_ref/objc/Method/-mapViewDidFinishLoadingMap:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapViewDidFinishLoadingMap:">-mapViewDidFinishLoadingMap:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the map view has finished loading.</p>
+
+<p>This method is called whenever the map view finishes loading, either after the initial load or after a style change has forced a reload.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapViewDidFinishLoadingMap</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapViewDidFinishLoadingMap</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view that has finished loading.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1048">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Tracking%20User%20Location"></a>
+                <a name="//apple_ref/objc/Section/Tracking User Location" class="dashAnchor"></a>
+                <a href="#/Tracking%20User%20Location">
+                  <h3 class="section-name">Tracking User Location</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapViewWillStartLocatingUser:"></a>
+                    <a name="//apple_ref/objc/Method/-mapViewWillStartLocatingUser:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapViewWillStartLocatingUser:">-mapViewWillStartLocatingUser:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the map view will begin tracking the user&rsquo;s location.</p>
+
+<p>This method is called when the value of the <code>showsUserLocation</code> property changes to <code>YES</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapViewWillStartLocatingUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapViewWillStartLocatingUser</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view that is tracking the user&rsquo;s location.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1074">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapViewDidStopLocatingUser:"></a>
+                    <a name="//apple_ref/objc/Method/-mapViewDidStopLocatingUser:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapViewDidStopLocatingUser:">-mapViewDidStopLocatingUser:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the map view has stopped tracking the user&rsquo;s location.</p>
+
+<p>This method is called when the value of the <code>showsUserLocation</code> property changes to <code>NO</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapViewDidStopLocatingUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapViewDidStopLocatingUser</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view that is tracking the user&rsquo;s location.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1083">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:didUpdateUserLocation:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:didUpdateUserLocation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:didUpdateUserLocation:">-mapView:didUpdateUserLocation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the location of the user was updated.</p>
+
+<p>While the <code>showsUserLocation</code> property is set to <code>YES</code>, this method is called whenever a new location update is received by the map view. This method is also called if the map view&rsquo;s user tracking mode is set to <code>MGLUserTrackingModeFollowWithHeading</code> and the heading changes, or if it is set to <code>MGLUserTrackingModeFollowWithCourse</code> and the course changes.</p>
+
+<p>This method is not called if the application is currently running in the background. If you want to receive location updates while running in the background, you must use the Core Location framework.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">didUpdateUserLocation</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">MGLUserLocation</span> <span class="o">*</span><span class="p">)</span><span class="nv">userLocation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapView</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">,</span> <span class="n">didUpdateUserLocation</span> <span class="nv">userLocation</span><span class="p">:</span> <span class="kt">MGLUserLocation</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view that is tracking the user&rsquo;s location.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userLocation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The location object representing the user&rsquo;s latest location. This property may be <code>nil</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1095">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:didFailToLocateUserWithError:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:didFailToLocateUserWithError:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:didFailToLocateUserWithError:">-mapView:didFailToLocateUserWithError:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that an attempt to locate the user&rsquo;s position failed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">didFailToLocateUserWithError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapView</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">,</span> <span class="n">didFailToLocateUserWithError</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view that is tracking the user&rsquo;s location.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An error object containing the reason why location tracking failed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1103">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:didChangeUserTrackingMode:animated:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:didChangeUserTrackingMode:animated:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:didChangeUserTrackingMode:animated:">-mapView:didChangeUserTrackingMode:animated:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the map view&rsquo;s user tracking mode has changed.</p>
+
+<p>This method is called after the map view asynchronously changes to reflect the new user tracking mode, for example by beginning to zoom or rotate.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">didChangeUserTrackingMode</span><span class="p">:(</span><span class="n">MGLUserTrackingMode</span><span class="p">)</span><span class="nv">mode</span>
+                     <span class="nf">animated</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapView</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">,</span> <span class="n">didChangeUserTrackingMode</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="o">!</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view that changed its tracking mode.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mode</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The new tracking mode.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether the change caused an animated effect on the map.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1114">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Managing%20the%20Display%20of%20Annotations"></a>
+                <a name="//apple_ref/objc/Section/Managing the Display of Annotations" class="dashAnchor"></a>
+                <a href="#/Managing%20the%20Display%20of%20Annotations">
+                  <h3 class="section-name">Managing the Display of Annotations</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:imageForAnnotation:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:imageForAnnotation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:imageForAnnotation:">-mapView:imageForAnnotation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns an image object to use for the marker for the specified point annotation object.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">MGLAnnotationImage</span> <span class="o">*</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+                      <span class="nf">imageForAnnotation</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">MGLAnnotation</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">annotation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view that requested the annotation image.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object representing the annotation that is about to be displayed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The image object to display for the specified annotation or <code>nil</code> if you want to display the default marker image.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1125">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:alphaForShapeAnnotation:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:alphaForShapeAnnotation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:alphaForShapeAnnotation:">-mapView:alphaForShapeAnnotation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the alpha value to use when rendering a shape annotation. Defaults to <code>1.0</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">alphaForShapeAnnotation</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLShape</span> <span class="o">*</span><span class="p">)</span><span class="nv">annotation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapView</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">,</span> <span class="n">alphaForShapeAnnotation</span> <span class="nv">annotation</span><span class="p">:</span> <span class="kt">MGLShape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view rendering the shape annotation.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The annotation being rendered.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An alpha value between <code>0</code> and <code>1.0</code>.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1134">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:strokeColorForShapeAnnotation:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:strokeColorForShapeAnnotation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:strokeColorForShapeAnnotation:">-mapView:strokeColorForShapeAnnotation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the stroke color to use when rendering a shape annotation. Defaults to the map view’s tint color.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">UIColor</span> <span class="o">*</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">strokeColorForShapeAnnotation</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLShape</span> <span class="o">*</span><span class="p">)</span><span class="nv">annotation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapView</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">,</span> <span class="n">strokeColorForShapeAnnotation</span> <span class="nv">annotation</span><span class="p">:</span> <span class="kt">MGLShape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyObject</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view rendering the shape annotation.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The annotation being rendered.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A color to use for the shape outline.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1143">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:fillColorForPolygonAnnotation:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:fillColorForPolygonAnnotation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:fillColorForPolygonAnnotation:">-mapView:fillColorForPolygonAnnotation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the fill color to use when rendering a polygon annotation. Defaults to the map view’s tint color.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">UIColor</span> <span class="o">*</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">fillColorForPolygonAnnotation</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLPolygon</span> <span class="o">*</span><span class="p">)</span><span class="nv">annotation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapView</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">,</span> <span class="n">fillColorForPolygonAnnotation</span> <span class="nv">annotation</span><span class="p">:</span> <span class="kt">MGLPolygon</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyObject</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view rendering the polygon annotation.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The annotation being rendered.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A color to use for the polygon interior.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1152">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:lineWidthForPolylineAnnotation:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:lineWidthForPolylineAnnotation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:lineWidthForPolylineAnnotation:">-mapView:lineWidthForPolylineAnnotation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the line width to use when rendering a polyline annotation. Defaults to <code>3.0</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">lineWidthForPolylineAnnotation</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLPolyline</span> <span class="o">*</span><span class="p">)</span><span class="nv">annotation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">mapView</span><span class="p">(</span><span class="nv">mapView</span><span class="p">:</span> <span class="kt">MGLMapView</span><span class="p">,</span> <span class="n">lineWidthForPolylineAnnotation</span> <span class="nv">annotation</span><span class="p">:</span> <span class="kt">MGLPolyline</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view rendering the polygon annotation.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The annotation being rendered.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A line width for the polyline.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1161">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:annotationCanShowCallout:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:annotationCanShowCallout:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:annotationCanShowCallout:">-mapView:annotationCanShowCallout:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a Boolean value indicating whether the annotation is able to display extra information in a callout bubble.</p>
+
+<p>If the value returned is <code>YES</code>, a standard callout bubble is shown when the user taps a selected annotation. The callout uses the title and subtitle text from the associated annotation object. If there is no title text, though, the annotation will not show a callout. The callout also displays any custom callout views returned by the delegate for the left and right callout accessory views.</p>
+
+<p>If the value returned is <code>NO</code>, the value of the title and subtitle strings are ignored.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">annotationCanShowCallout</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">MGLAnnotation</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">annotation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view that requested the annotation callout ability.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object representing the annotation.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A Boolean indicating whether the annotation should show a callout.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1174">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:calloutViewForAnnotation:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:calloutViewForAnnotation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:calloutViewForAnnotation:">-mapView:calloutViewForAnnotation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a callout view to display for the specified annotation.</p>
+
+<p>If this method is present in the delegate, it must return a new instance of a view dedicated to display the callout bubble. It will be configured by the map view. If this method is not present, or if it returns <code>nil</code>, a standard, two-line, bubble-like callout view is displayed by default.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">UIView</span><span class="o">&lt;</span><span class="n">MGLCalloutView</span><span class="o">&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+                    <span class="nf">calloutViewForAnnotation</span><span class="p">:</span>
+                        <span class="p">(</span><span class="n">nonnull</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">MGLAnnotation</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">annotation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view that requested the callout view.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object representing the annotation.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view conforming to the <code><a href="../Protocols/MGLCalloutView.html">MGLCalloutView</a></code> protocol, or <code>nil</code> to use the default callout view.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1185">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:leftCalloutAccessoryViewForAnnotation:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:leftCalloutAccessoryViewForAnnotation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:leftCalloutAccessoryViewForAnnotation:">-mapView:leftCalloutAccessoryViewForAnnotation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the view to display on the left side of the standard callout bubble.</p>
+
+<p>The default value is treated as if <code>nil</code>. The left callout view is typically used to display information about the annotation or to link to custom information provided by your application.</p>
+
+<p>If the view you specify is also a descendant of the <code>UIControl</code> class, you can use the map view&rsquo;s delegate to receive notifications when your control is tapped. If it does not descend from <code>UIControl</code>, your view is responsible for handling any touch events within its bounds.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">leftCalloutAccessoryViewForAnnotation</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">MGLAnnotation</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">annotation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view presenting the annotation callout.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object representing the annotation with the callout.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The accessory view to display.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1198">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:rightCalloutAccessoryViewForAnnotation:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:rightCalloutAccessoryViewForAnnotation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:rightCalloutAccessoryViewForAnnotation:">-mapView:rightCalloutAccessoryViewForAnnotation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the view to display on the right side of the standard callout bubble.</p>
+
+<p>The default value is treated is if <code>nil</code>. The right callout view is typically used to link to more detailed information about the annotation. A common view to specify for this property is <code>UIButton</code> object whose type is set to <code>UIButtonTypeDetailDisclosure</code>.</p>
+
+<p>If the view you specify is also a descendant of the <code>UIControl</code> class, you can use the map view&rsquo;s delegate to receive notifications when your control is tapped. If it does not descend from <code>UIControl</code>, your view is responsible for handling any touch events within its bounds.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">rightCalloutAccessoryViewForAnnotation</span><span class="p">:</span>
+        <span class="p">(</span><span class="n">nonnull</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">MGLAnnotation</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">annotation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view presenting the annotation callout.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object representing the annotation with the callout.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The accessory view to display.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1211">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Managing%20Annotations"></a>
+                <a name="//apple_ref/objc/Section/Managing Annotations" class="dashAnchor"></a>
+                <a href="#/Managing%20Annotations">
+                  <h3 class="section-name">Managing Annotations</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:annotation:calloutAccessoryControlTapped:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:annotation:calloutAccessoryControlTapped:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:annotation:calloutAccessoryControlTapped:">-mapView:annotation:calloutAccessoryControlTapped:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the user tapped one of the annotation&rsquo;s accessory buttons.</p>
+
+<p>Accessory views contain custom content and are positioned on either side of the annotation title text. If a view you specify is a descendant of the <code>UIControl</code> class, the map view calls this method as a convenience whenever the user taps your view. You can use this method to respond to taps and perform any actions associated with that control. For example, if your control displayed additional information about the annotation, you could use this method to present a modal panel with that information.</p>
+
+<p>If your custom accessory views are not descendants of the <code>UIControl</code> class, the map view does not call this method.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+                       <span class="nf">annotation</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">MGLAnnotation</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">annotation</span>
+    <span class="nf">calloutAccessoryControlTapped</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIControl</span> <span class="o">*</span><span class="p">)</span><span class="nv">control</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view containing the specified annotation.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The annotation whose button was tapped.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>control</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The control that was tapped.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1226">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:tapOnCalloutForAnnotation:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:tapOnCalloutForAnnotation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:tapOnCalloutForAnnotation:">-mapView:tapOnCalloutForAnnotation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that the user tapped on an annotation&rsquo;s callout view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">tapOnCalloutForAnnotation</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">MGLAnnotation</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">annotation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view containing the specified annotation.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The annotation whose callout was tapped.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1234">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Selecting%20Annotations"></a>
+                <a name="//apple_ref/objc/Section/Selecting Annotations" class="dashAnchor"></a>
+                <a href="#/Selecting%20Annotations">
+                  <h3 class="section-name">Selecting Annotations</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:didSelectAnnotation:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:didSelectAnnotation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:didSelectAnnotation:">-mapView:didSelectAnnotation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that one of its annotations was selected.</p>
+
+<p>You can use this method to track changes in the selection state of annotations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">didSelectAnnotation</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">MGLAnnotation</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">annotation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view containing the annotation.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The annotation that was selected.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1246">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLMapViewDelegate(im)mapView:didDeselectAnnotation:"></a>
+                    <a name="//apple_ref/objc/Method/-mapView:didDeselectAnnotation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLMapViewDelegate(im)mapView:didDeselectAnnotation:">-mapView:didDeselectAnnotation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate that one of its annotations was deselected.</p>
+
+<p>You can use this method to track changes in the selection state of annotations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">mapView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">MGLMapView</span> <span class="o">*</span><span class="p">)</span><span class="nv">mapView</span>
+    <span class="nf">didDeselectAnnotation</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">MGLAnnotation</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">annotation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mapView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The map view containing the annotation.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>annotation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The annotation that was deselected.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/ios/include/MGLMapView.h#L1256">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2014–2016 <a class="link" href="https://www.mapbox.com/" target="_blank" rel="external">Mapbox</a>. See <a class="link" href="https://github.com/mapbox/mapbox-gl-native/blob/master/LICENSE.md" target="_blank" rel="external">license</a> for more details.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

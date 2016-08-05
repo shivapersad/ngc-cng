@@ -12,7 +12,7 @@ import {ContactUsComponent} from "./pages/contact-us/contact-us.component";
 import {AboutNGCCNGComponent} from "./pages/about-ngc-cng/about-ngc-cng.component";
 import {CNGSavingsCalculatorV2Component} from "./pages/cng-savings-calculator-v2/cng-savings-calculator-v2.component";
 import {TestingAreaComponent} from "./pages/testing-area/testing-area.component";
-import {StationComponent} from "./pages/testing-area/station.component";
+import {StationComponent} from "./pages/cng-refuelling-stations/station.component";
 import {ApprovedConverterComponent} from "./pages/licensed-cng-converters/approved-converter/approved-converter.component";
 import {LicensedConverterComponent} from "./pages/licensed-cng-converters/licensed-converter/licensed-converter.component";
 

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MGLAnnotation Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    <link rel='shortcut icon' href='https://www.mapbox.com/img/favicon.ico' type='image/x-icon' />
+
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Protocol/MGLAnnotation" class="dashAnchor"></a>
+    <a title="MGLAnnotation Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Mapbox iOS SDK Docs</a></p>
+        <p class="header-right"><a href="https://github.com/mapbox/mapbox-gl-native"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fwww%2Emapbox%2Ecom%2Fios%2Dsdk%2Fdocsets%2FMapbox%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Mapbox iOS SDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        MGLAnnotation Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Map.html">Map</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/MGLAccountManager.html">MGLAccountManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLMapCamera.html">MGLMapCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLMapView.html">MGLMapView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLMapViewDelegate.html">MGLMapViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLStyle.html">MGLStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Map.html#/c:MGLStyle.h@MGLStyleDefaultVersion">MGLStyleDefaultVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MGLUserTrackingMode.html">MGLUserTrackingMode</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Annotations.html">Annotations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLAnnotation.html">MGLAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLAnnotationImage.html">MGLAnnotationImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MGLAnnotationVerticalAlignment.html">MGLAnnotationVerticalAlignment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLCalloutView.html">MGLCalloutView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLCalloutViewDelegate.html">MGLCalloutViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLMultiPoint.html">MGLMultiPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLPointAnnotation.html">MGLPointAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLPolygon.html">MGLPolygon</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLPolyline.html">MGLPolyline</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MGLOverlay.html">MGLOverlay</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLShape.html">MGLShape</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLUserLocation.html">MGLUserLocation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Offline Storage.html">Offline Storage</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:objc(pl)MGLOfflineRegion">MGLOfflineRegion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLOfflineStorage.html">MGLOfflineStorage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLOfflinePack.html">MGLOfflinePack</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:MGLOfflineStorage.h@T@MGLOfflinePackAdditionCompletionHandler">MGLOfflinePackAdditionCompletionHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackErrorNotification">MGLOfflinePackErrorNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackErrorUserInfoKey">MGLOfflinePackErrorUserInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackMaximumCountUserInfoKey">MGLOfflinePackMaximumCountUserInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackMaximumMapboxTilesReachedNotification">MGLOfflinePackMaximumMapboxTilesReachedNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MGLOfflinePackProgress.html">MGLOfflinePackProgress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackProgressChangedNotification">MGLOfflinePackProgressChangedNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackProgressUserInfoKey">MGLOfflinePackProgressUserInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:MGLOfflineStorage.h@T@MGLOfflinePackRemovalCompletionHandler">MGLOfflinePackRemovalCompletionHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MGLOfflinePackState.html">MGLOfflinePackState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Offline Storage.html#/c:@MGLOfflinePackStateUserInfoKey">MGLOfflinePackStateUserInfoKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MGLTilePyramidOfflineRegion.html">MGLTilePyramidOfflineRegion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Categories/NSValue(MGLOfflinePackAdditions).html">NSValue(MGLOfflinePackAdditions)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Geometry.html">Geometry</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/MGLCoordinateBounds.html">MGLCoordinateBounds</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsEqualToCoordinateBounds">MGLCoordinateBoundsEqualToCoordinateBounds</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsGetCoordinateSpan">MGLCoordinateBoundsGetCoordinateSpan</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsIsEmpty">MGLCoordinateBoundsIsEmpty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsMake">MGLCoordinateBoundsMake</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateBoundsOffset">MGLCoordinateBoundsOffset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MGLCoordinateSpan.html">MGLCoordinateSpan</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateSpanEqualToCoordinateSpan">MGLCoordinateSpanEqualToCoordinateSpan</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLCoordinateSpanMake">MGLCoordinateSpanMake</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:@MGLCoordinateSpanZero">MGLCoordinateSpanZero</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLDegreesFromRadians">MGLDegreesFromRadians</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLRadiansFromDegrees">MGLRadiansFromDegrees</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Geometry.html#/c:MGLGeometry.h@F@MGLStringFromCoordinateBounds">MGLStringFromCoordinateBounds</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Constants.html">Other Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Constants.html#/c:@MGLErrorDomain">MGLErrorDomain</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Enums.html">Other Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/MGLMapDebugMaskOptions.html">MGLMapDebugMaskOptions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Type Definitions.html">Other Type Definitions</a>
+            <ul class="nav-group-tasks">
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MGLAnnotation</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="k">@protocol</span> <span class="nc">MGLAnnotation</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>The <code>MGLAnnotation</code> protocol is used to provide annotation-related information to a map view. To use this protocol, you adopt it in any custom objects that store or represent annotation data. Each object then serves as the source of information about a single map annotation and provides critical information, such as the annotation’s location on the map. Annotation objects do not provide the visual representation of the annotation but typically coordinate (in conjunction with the map view’s delegate) the creation of an appropriate objects to handle the display.</p>
+
+<p>An object that adopts this protocol must implement the <code>coordinate</code> property. The other methods of this protocol are optional.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Position%20Attributes"></a>
+                <a name="//apple_ref/objc/Section/Position Attributes" class="dashAnchor"></a>
+                <a href="#/Position%20Attributes">
+                  <h3 class="section-name">Position Attributes</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLAnnotation(py)coordinate"></a>
+                    <a name="//apple_ref/objc/Property/coordinate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLAnnotation(py)coordinate">coordinate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The center point (specified as a map coordinate) of the annotation. (required) (read-only)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">CLLocationCoordinate2D</span> <span class="n">coordinate</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">coordinate</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLAnnotation.h#L19">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Title%20Attributes"></a>
+                <a name="//apple_ref/objc/Section/Title Attributes" class="dashAnchor"></a>
+                <a href="#/Title%20Attributes">
+                  <h3 class="section-name">Title Attributes</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLAnnotation(py)title"></a>
+                    <a name="//apple_ref/objc/Property/title" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLAnnotation(py)title">title</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The string containing the annotation’s title.</p>
+
+<p>Although this property is optional, if you support the selection of annotations in your map view, you are expected to provide this property. This string is displayed in the callout for the associated annotation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@optional</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">title</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLAnnotation.h#L30">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MGLAnnotation(py)subtitle"></a>
+                    <a name="//apple_ref/objc/Property/subtitle" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MGLAnnotation(py)subtitle">subtitle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The string containing the annotation’s subtitle.</p>
+
+<p>This string is displayed in the callout for the associated annotation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@optional</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">subtitle</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">optional</span> <span class="k">var</span> <span class="nv">subtitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/mapbox/mapbox-gl-native/tree/ios-v3.2.3/platform/darwin/include/MGLAnnotation.h#L37">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2014–2016 <a class="link" href="https://www.mapbox.com/" target="_blank" rel="external">Mapbox</a>. See <a class="link" href="https://github.com/mapbox/mapbox-gl-native/blob/master/LICENSE.md" target="_blank" rel="external">license</a> for more details.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

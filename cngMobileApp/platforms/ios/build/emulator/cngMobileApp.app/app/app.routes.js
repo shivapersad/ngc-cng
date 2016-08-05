@@ -12,7 +12,9 @@ var contact_us_component_1 = require("./pages/contact-us/contact-us.component");
 var about_ngc_cng_component_1 = require("./pages/about-ngc-cng/about-ngc-cng.component");
 var cng_savings_calculator_v2_component_1 = require("./pages/cng-savings-calculator-v2/cng-savings-calculator-v2.component");
 var testing_area_component_1 = require("./pages/testing-area/testing-area.component");
-var station_component_1 = require("./pages/testing-area/station.component");
+var station_component_1 = require("./pages/cng-refuelling-stations/station.component");
+var approved_converter_component_1 = require("./pages/licensed-cng-converters/approved-converter/approved-converter.component");
+var licensed_converter_component_1 = require("./pages/licensed-cng-converters/licensed-converter/licensed-converter.component");
 exports.routes = [
     { path: "", component: homepage_component_1.HomepageComponent },
     { path: "news", component: news_component_1.NewsComponent },
@@ -26,7 +28,9 @@ exports.routes = [
     { path: "about-ngc-cng", component: about_ngc_cng_component_1.AboutNGCCNGComponent },
     { path: "cng-savings-calculator-v2", component: cng_savings_calculator_v2_component_1.CNGSavingsCalculatorV2Component },
     { path: "testing-area", component: testing_area_component_1.TestingAreaComponent },
-    { path: "station/:id", component: station_component_1.StationComponent }
+    { path: "station/:id", component: station_component_1.StationComponent },
+    { path: "approvedConverter/:id", component: approved_converter_component_1.ApprovedConverterComponent },
+    { path: "licensedConverter/:id", component: licensed_converter_component_1.LicensedConverterComponent }
 ];
 exports.APP_ROUTER_PROVIDERS = [
     router_1.nsProvideRouter(exports.routes, {})

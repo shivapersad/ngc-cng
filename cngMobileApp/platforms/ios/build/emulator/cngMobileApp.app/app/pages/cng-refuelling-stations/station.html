@@ -13,20 +13,17 @@
         
         <Label text="Facilities Available" class="lblFacilities" row="3" col="0" colSpan="3"></Label>
         
-        <Image [ng-if]="cng" src="res://homepage" class="facilities" row="4" col="0"></Image>
-        <Label [ng-if]="cng" row="5" col="0"></Label>
+        <Image [src]="imgCNG" class="facilities" row="4" col="0"></Image>
+        <Label text="CNG" row="5" col="0"></Label>
 
-        <Image [ng-if]="atm" src="res://homepage" class="facilities" row="4" col="1"></Image>
-        <Label [ng-if]="atm" text="ATM" row="5" col="1"></Label>
+        <Image [src]="imgATM" class="facilities" row="4" col="1"></Image>
+        <Label text="ATM" row="5" col="1"></Label>
 
-        <Image [ng-if]="shop" src="res://homepage" class="facilities" row="4" col="2"></Image>
-        <Label [ng-if]="shop" text="One Stop Shop" row="5" col="2"></Label>
+        <Image [src]="imgShop" class="facilities" row="4" col="2"></Image>
+        <Label text="One Stop Shop" row="5" col="2"></Label>
 
-        <!-- 
-        <Image [*ngIf]="tyrePressure" src="res://homepage" class="facilities" row="4" col="0"></Image>
-        <Label [*ngIf]="tyrePressure" text="Tyre Pressure" row="6" col="0"></Label>
-
-        -->
+        <Image [src]="imgTyrePressure" class="facilities" row="4" col="0"></Image>
+        <Label text="Tyre Pressure" row="6" col="0"></Label>
 
         <!--
         <Image src="res://homepage" class="facilities" row="4" col="0"></Image>

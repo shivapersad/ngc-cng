@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {Router} from "@angular/router";
-import {ContactForm} from '../../../shared/interfaces'
 import {EventData} from "data/observable";
+var mapbox = require("nativescript-mapbox");
 
 @Component({
     templateUrl: "pages/testing-area/testing-area.html",
@@ -12,59 +12,51 @@ export class TestingAreaComponent {
 
     title: string;
 
-    arr: Array<any> = [
-        
-        {
-            "id" : "0",
-            "name" : "Station 1",
-            "address" : "100 Broomhill Road, Chaguanas",
-            "telephone" : "(868)641-0001",
-            "email" : "station1@gmail.com",
-            "facilities" : {
-                "cng" : "y",
-                "atm" : "n",
-                "shop" : "y",
-                "tyrePressure" : "y"
-            }
-        },
-        {
-            "id" : "1",
-            "name" : "Station 2",
-            "address" : "200 Broomhill Road, Chaguanas",
-            "telephone" : "(868)642-0001",
-            "email" : "station1@gmail.com",
-            "facilities" : {
-                "cng" : "y",
-                "atm" : "y",
-                "shop" : "y",
-                "tyrePressure" : "y"
-            }
-        },
-        {
-            "id" : "2",
-            "name" : "Station 3",
-            "address" : "300 Broomhill Road, Chaguanas",
-            "telephone" : "(868)643-0001",
-            "email" : "station1@gmail.com",
-            "facilities" : {
-                "cng" : "y",
-                "atm" : "n",
-                "shop" : "n",
-                "tyrePressure" : "n"
-            }
-        }
+    constructor() {
+        this.title = "Testing Area";
 
-    ];
+        var accessToken = 'pk.eyJ1Ijoic2hpdmFwZXJzYWQiLCJhIjoiY2lyaHNhczlrMDA0bGo3bTV5NDN3ZWxmdiJ9.S9s8AXgyuKhXiLbV5dR7KQ';
 
-    constructor(private _router: Router) {
-        this.title = "CNG Refuelling Stations (List)";
-        console.log("Array size: " + this.arr.length);
-
+        mapbox.show({
+            accessToken: accessToken,
+            style: mapbox.MapStyle.OUTDOORS,
+            margins: {
+                left: 32,
+                right: 32,
+                top: 300,
+                bottom: 50
+            },
+            center: {
+                lat: 52.3702160,
+                lng: 4.8951680
+            },
+            zoomLevel: 9, // 0 (most of the world) to 20, default 0
+            showUserLocation: true, // default false
+            hideAttribution: true, // default false
+            hideLogo: true, // default false
+            hideCompass: false, // default false
+            disableRotation: false, // default false
+            disableScroll: false, // default false
+            disableZoom: false, // default false
+            disableTilt: false, // default false
+            markers: [
+                {
+                    lat: 52.3732160,
+                    lng: 4.8941680,
+                    title: 'Nice location',
+                    subtitle: 'Really really nice location',
+                    iconPath: 'res/markers/green_pin_marker.png',
+                    onTap: function(){console.log("'Nice location' marker tapped");},
+                    onCalloutTap: function(){console.log("'Nice location' marker callout tapped");}
+                }
+            ]
+            }).then(
+                function(result) {
+                    console.log("Mapbox show done");
+                },
+                function(error) {
+                    console.log("mapbox show error: " + error);
+                }
+            );
     }
-
-    public onItemTap(args):void {
-        console.log("Tapped Item: " + args.index);
-        this._router.navigate(["/station/" + args.index]);
-    }
-
 }

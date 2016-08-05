@@ -1,2 +1,33 @@
-<ActionBar title="Licensed CNG Converters"></ActionBar>
+<ActionBar [title]="title"></ActionBar>
 
+<StackLayout>
+
+    <Label text="Licensed CNG Converters"></Label>
+
+    <ListView [items]="licensed" (itemTap)="onLicensedItemTap($event)">
+        <template let-item="item" let-i="index">
+            <StackLayout>
+                <Label [text]="item.name"></Label>
+                <!-- <Label [text]="item.address"></Label>
+                <Label [text]="item.phoneNumber"></Label>
+                <Label [text]="item.website"></Label>
+                <Label [text]="item.emailAddress"></Label> -->
+            </StackLayout>
+        </template>
+    </ListView>
+
+    <Label text="Approved CNG Converters"></Label>
+    
+    <ListView [items]="approved" (itemTap)="onApprovedItemTap($event)">
+        <template let-item="item" let-index="index">
+            <StackLayout>
+                <Label [text]="item.name"></Label>
+                <!-- <Label [text]="item.address"></Label>
+                <Label [text]="item.phoneNumber"></Label>
+                <Label [text]="item.website"></Label>
+                <Label [text]="item.emailAddress"></Label> -->
+            </StackLayout>
+        </template>
+    </ListView>
+
+</StackLayout>
