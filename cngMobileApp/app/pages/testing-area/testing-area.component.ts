@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {Router} from "@angular/router";
 import {EventData} from "data/observable";
-var mapbox = require("nativescript-mapbox");
+//var mapbox = require("nativescript-mapbox");
 
 @Component({
     templateUrl: "pages/testing-area/testing-area.html",
@@ -12,6 +12,11 @@ export class TestingAreaComponent {
 
     title: string;
 
+    constructor() {
+
+    }
+
+    /*
     constructor() {
         this.title = "Testing Area";
 
@@ -59,4 +64,5 @@ export class TestingAreaComponent {
                 }
             );
     }
+    */
 }

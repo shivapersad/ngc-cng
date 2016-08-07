@@ -1,0 +1,19 @@
+{
+  "name": "newsauthor",
+  "version": "1.0.0",
+  "description": "CNG NGC News Authoring Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivapersad/ngc-cng.git"
+  },
+  "author": "Shiva Persad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivapersad/ngc-cng/issues"
+  },
+  "homepage": "https://github.com/shivapersad/ngc-cng#readme"
+}
