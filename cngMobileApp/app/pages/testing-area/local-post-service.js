@@ -6,7 +6,7 @@ require('rxjs/add/operator/catch');
 var LocalPostService = (function () {
     function LocalPostService(_http) {
         this._http = _http;
-        this.localPostUrl = 'localhost:3000/localPosts'; //URL to API
+        this.localPostUrl = 'localhost:3000/mobile/localPosts'; //URL to API
     }
     LocalPostService.prototype.getLocalPosts = function () {
         return this._http.get(this.localPostUrl)

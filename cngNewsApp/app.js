@@ -10,6 +10,7 @@ var http = require('http');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+//var flash = require('connect-flash');
 // FOLLOWING TUTORIALS
 
 var session = require('express-session');
@@ -46,7 +47,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/bower_components',  express.static(__dirname + '/bower_components')); 
+app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+//app.use(flash());
 console.log("Dir name: " + path.join(__dirname, 'views'));
 
 //app.use(session({ secret: 'compressed'}));

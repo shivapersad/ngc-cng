@@ -1,8 +1,6 @@
 /*
 NOTES
 Able to retrieve information from the Array
-Able to display homepage image as a placeholder
-Unable to display notAvailable image presently
 
 */
 "use strict";
@@ -21,7 +19,6 @@ var StationComponent = (function () {
                     "cng": "n",
                     "atm": "n",
                     "shop": "y",
-                    "tyrePressure": "y"
                 }
             },
             {
@@ -29,12 +26,11 @@ var StationComponent = (function () {
                 "name": "Station 2",
                 "address": "200 Broomhill Road, Chaguanas",
                 "telephone": "(868)642-0001",
-                "email": "station1@gmail.com",
+                "email": "station2@gmail.com",
                 "facilities": {
                     "cng": "y",
                     "atm": "y",
                     "shop": "y",
-                    "tyrePressure": "y"
                 }
             },
             {
@@ -42,71 +38,39 @@ var StationComponent = (function () {
                 "name": "Station 3",
                 "address": "300 Broomhill Road, Chaguanas",
                 "telephone": "(868)643-0001",
-                "email": "station1@gmail.com",
+                "email": "station3@gmail.com",
                 "facilities": {
                     "cng": "y",
                     "atm": "n",
                     "shop": "n",
-                    "tyrePressure": "n"
                 }
             }
         ];
         this.id = route.snapshot.params['id'];
-        console.log("Id: " + this.id);
+    }
+    StationComponent.prototype.ngOnInit = function () {
         this.station = this.searchID(this.id);
-        console.log("Station Name: " + this.station['name']);
         this.title = this.station['name'];
-        //console.log("Array size: " + this.arr.length);
-        this.cng = false;
-        this.atm = false;
-        this.shop = false;
-        this.tyrePressure = false;
         this.facilities = this.station['facilities'];
-        console.log("Facilities[cng]: " + this.facilities['cng']);
-        console.log("Facilities[atm]: " + this.facilities['atm']);
-        console.log("Facilities[shop]: " + this.facilities['shop']);
-        console.log("Facilities[tyrePressure]: " + this.facilities['tyrePressure']);
         if (this.facilities['cng'] === "y") {
-            this.cng = true;
-            this.imgCNG = "res://homepage";
-            console.log("CNG Image: " + this.imgCNG);
+            this.imgCNG = 'res://cng-icon';
         }
         else {
-            this.imgCNG = "res://notAvailable";
-            console.log("CNG Image: " + this.imgCNG);
+            this.imgCNG = 'res://not_available';
         }
         if (this.facilities['atm'] === "y") {
-            this.atm = true;
-            this.imgATM = "res://homepage";
-            console.log("ATM Image: " + this.imgATM);
+            this.imgATM = "res://atm-icon";
         }
         else {
-            this.imgATM = "res://notAvailable";
-            console.log("ATM Image: " + this.imgATM);
+            this.imgATM = "res://not_available";
         }
         if (this.facilities['shop'] === "y") {
-            this.shop = true;
-            this.imgShop = "res://homepage";
-            console.log("Shop Image: " + this.imgShop);
+            this.imgShop = "res://shop-icon";
         }
         else {
-            this.imgShop = "res://notAvailable";
-            console.log("Shop Image: " + this.imgShop);
+            this.imgShop = "res://not_available";
         }
-        if (this.facilities['tyrePressure'] === "y") {
-            this.tyrePressure = true;
-            this.imgTyrePressure = "res://homepage";
-            console.log("Tyre Pressure Image: " + this.imgTyrePressure);
-        }
-        else {
-            this.imgTyrePressure = "res://notAvailable";
-            console.log("Tyre Pressure Image: " + this.imgTyrePressure);
-        }
-        console.log("CNG: " + this.cng);
-        console.log("ATM: " + this.atm);
-        console.log("Shop: " + this.shop);
-        console.log("Tyre Pressure: " + this.tyrePressure);
-    }
+    };
     StationComponent.prototype.searchID = function (id) {
         for (var i = 0; i < this.arr.length; i++) {
             if (this.arr[i].id === id.toString()) {
@@ -116,8 +80,8 @@ var StationComponent = (function () {
     };
     StationComponent = __decorate([
         core_1.Component({
-            templateUrl: "pages/testing-area/station.html",
-            styleUrls: ["pages/testing-area/station-common.css"]
+            templateUrl: "pages/cng-refuelling-stations/station.html",
+            styleUrls: ["pages/cng-refuelling-stations/station.css"]
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute])
     ], StationComponent);

@@ -6,7 +6,7 @@ var validator = require('validator');
 
 @Component({
     templateUrl: "pages/contact-us/contact-us.html",
-    styleUrls: ["pages/contact-us/contact-us.css", "pages/contact-us/contact-us-common.css"]
+    styleUrls: ["pages/contact-us/contact-us.css"]
 })
 export class ContactUsComponent {
     
@@ -30,13 +30,6 @@ export class ContactUsComponent {
         this.contactForm.subject = "";
         this.contactForm.content = "";
 
-        /*
-        this.firstName = "John";
-        this.lastName = "Doe";
-        this.emailAddress = "john.doe@tester.com";
-        this.subject = "";
-        this.content = "tester123214 @!#!@";
-        */
     }
 
     // Function: sendContactForm
@@ -99,7 +92,6 @@ export class ContactUsComponent {
     // Paramters: none
     // Clears the inputs from the Contact Form
     clearForm(): void {
-        console.log("Clearing form");
 
         this.contactForm.firstName = "";
         this.contactForm.lastName = "";
@@ -107,13 +99,6 @@ export class ContactUsComponent {
         this.contactForm.subject = "";
         this.contactForm.content = "";
 
-        /*
-        this.firstName = "";
-        this.lastName = "";
-        this.emailAddress = "";
-        this.subject = "";
-        this.content = "";
-        */
     }
 
     validateContactForm(): number {
@@ -167,7 +152,6 @@ export class ContactUsComponent {
             okButtonText: buttonTxt
         })
         .then(()=> {
-            console.log("Dialog closed!");
             this._router.navigate(["/"]);
         });
     }

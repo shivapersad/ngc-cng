@@ -1,0 +1,32 @@
+<ActionBar [title]="title"></ActionBar>
+
+<StackLayout>
+
+    <Label class="header" text="Company Details"></Label>
+    
+    <StackLayout orientation="horizontal">
+        <Label text="Company Name: "></Label>
+        <Label class="item" [text]="licensedConverter['name']"></Label>
+    </StackLayout>
+    
+    <StackLayout orientation="horizontal">
+        <Label text="Address: "></Label>
+        <Label class="item" [text]="licensedConverter['address']"></Label>
+    </StackLayout>
+    
+    <StackLayout orientation="horizontal">
+        <Label text="Phone Number: "></Label>
+        <Label class="item" [text]="licensedConverter['phoneNumber']"></Label>
+    </StackLayout>
+
+    <StackLayout orientation="horizontal">
+        <Label text="Website: "></Label>
+        <Label class="item" [text]="licensedConverter['website']"></Label>
+    </StackLayout>
+
+    <StackLayout orientation="horizontal">
+        <Label text="Email address: "></Label>
+        <Label class="item" [text]="licensedConverter['emailAddress']"></Label>
+    </StackLayout>
+
+</StackLayout>

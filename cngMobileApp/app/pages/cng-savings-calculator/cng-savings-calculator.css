@@ -1,0 +1,52 @@
+Button{
+    color: white;
+    background-color: green;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+Button.btnSavings {
+    horizontal-align: center;
+}
+
+Label {
+    font-size: 12px;
+    padding-top: 10;
+    width: 75%;
+    height: 40;
+}
+
+TextField {
+    font-size: 12px;
+    width: 25%;
+    height: 40;
+    text-align: center;
+}
+
+TextField.noEdit {
+    background-color: gray;
+    color: green;
+}
+
+Label.savings {
+    font-size: 16px;
+}
+
+TextField.savings {
+    font-size: 20px;
+    color: green;
+}
+
+SegmentedBar {
+    width: 100%;
+    font-size: 12px;
+}
+
+SegmentedBar items {
+    width: 33%
+}

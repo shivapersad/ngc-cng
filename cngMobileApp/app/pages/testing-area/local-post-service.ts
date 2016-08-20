@@ -11,7 +11,7 @@ constructor(private _http: Http) {
         
     }
 
-    private localPostUrl = 'localhost:3000/localPosts'; //URL to API
+    private localPostUrl = 'localhost:3000/mobile/localPosts'; //URL to API
 
     getLocalPosts(): Observable<LocalPost[]> {
         return this._http.get(this.localPostUrl)

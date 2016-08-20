@@ -5,3 +5,11 @@ export interface ContactForm {
     subject: string; // Subject from form
     content: string; // Questions/Comments from form
 }
+
+export class LocalPost {
+    dateTimePosted: string;
+    title: string;
+    content: string;
+    live: string;
+    username: string;
+}
