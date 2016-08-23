@@ -53,7 +53,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Date and Time Posted</th>
+                    <th>Date Posted</th>
                     <th>Title</th>
                     <th>URL</th>
                     <th>Live</th>
@@ -63,16 +63,21 @@
                 </tr>
             </thead>
            <% for (var i=0; i<posts.length; i++) { %>
-            <tr>
-                <td><%= posts[i].dateTimePosted %></td>
-                <td><%= posts[i].title %></td>
-                <td><%= posts[i].url %></td>
-                <td><%= posts[i].live %></td>
-                <td><%= posts[i].username %></td>
-                <td><a href="/edit-international-post/<%= posts[i]._id %>"><button type="button" class="btn btn-primary navbar-btn">Edit</td>
-                <!-- <input type="hidden" name="postid" value="<%= posts[i]._id %>"> -->
-                <td><a href="/delete-international-post/<%= posts[i]._id %>"><button type="button" class="btn btn-danger navbar-btn">Delete</button></td>
-            </tr>
+
+               <%
+                    var d = parseInt(posts[i].dateTimePosted);
+                    var dateTimePosted = new Date(d).toDateString();
+                %>
+
+                <tr>
+                    <td><%= dateTimePosted %></td>
+                    <td><%= posts[i].title %></td>
+                    <td><%= posts[i].url %></td>
+                    <td><%= posts[i].live %></td>
+                    <td><%= posts[i].username %></td>
+                    <td><a href="/edit-international-post/<%= posts[i]._id %>"><button type="button" class="btn btn-primary navbar-btn">Edit</td>
+                    <td><a href="/delete-international-post/<%= posts[i]._id %>"><button type="button" class="btn btn-danger navbar-btn">Delete</button></td>
+                </tr>
             <% } %>
         </table>
     </div>

@@ -23,12 +23,18 @@ router.post('/', isAuthenticated, function(req, res, next) {
   //console.log("req.body: " + req.body);
   //console.log("req.body.title: " + req.body.title);
 
-  var d = new Date();
+  if (req.body.live == null) {
+    live = "off";
+  }
+  else {
+    live = "on";
+  }
+
   var post = {
-    "dateTimePosted": d.toString(),
+    "dateTimePosted": Date.now(),
     "title": req.body.title,
     "url": req.body.url,
-    "live": "on",
+    "live": live,
     "username": JSON.stringify(req.session.passport.user.username).replace(/\"/g, "")
   }
   

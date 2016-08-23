@@ -29,13 +29,19 @@ router.post('/edit/:id', isAuthenticated, function(req, res) {
 
     var id = req.param('id');
     console.log("Post ID: " + JSON.stringify(id));
-    var d = new Date();
+
+    if (req.body.live == null) {
+      live = "off";
+    }
+    else {
+      live = "on";
+    }
 
     var newData = {};
-    newData.dateTimePosted = d.toString();
+    newData.dateTimePosted = Date.now();
     newData.title = req.body.title;
     newData.url = req.body.url;
-    newData.live = req.body.live;
+    newData.live = live;
     newData.username = JSON.stringify(req.session.passport.user.username).replace(/\"/g, "");
 
     internationalPostDetails.findOneAndUpdate(id, newData, {upsert:true}, function(err, doc){

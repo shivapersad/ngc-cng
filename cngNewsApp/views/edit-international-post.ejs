@@ -61,6 +61,14 @@
                 <label class="control-label col-sm-2">Link to content:</label>
                 <input class="col-sm-8" type="url" name="url" value="<%= post.url %>" required>
             </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Set Post Live</label>
+                <% if (post.live == "on") { %>
+                    <input class="col-sm-4" type="checkbox" name="live" checked>
+                <% } else { %>
+                    <input class="col-sm-4" type="checkbox" name="live">
+                <% } %>
+            </div>
             <button type="submit" class="btn btn-primary">Submit Post</button>
 
         </form>
