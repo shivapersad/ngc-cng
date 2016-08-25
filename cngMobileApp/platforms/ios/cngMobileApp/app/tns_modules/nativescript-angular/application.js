@@ -12,10 +12,7 @@ var api_1 = require('@angular/core/src/render/api');
 var renderer_1 = require('./renderer');
 var dom_adapter_1 = require('./dom-adapter');
 var compiler_1 = require('@angular/compiler');
-var http_1 = require('@angular/http');
 var xhr_1 = require('./http/xhr');
-var ns_http_1 = require('./http/ns-http');
-var ns_file_system_1 = require('./file-system/ns-file-system');
 var exception_handler_1 = require('@angular/core/src/facade/exception_handler');
 var application_common_providers_1 = require('@angular/core/src/application_common_providers');
 var platform_common_providers_1 = require('@angular/core/src/platform_common_providers');
@@ -69,8 +66,10 @@ function bootstrap(appComponentType, customProviders) {
                 return new exception_handler_1.ExceptionHandler(new ConsoleLogger(), true);
             }, deps: []
         }),
+        platform_providers_1.defaultFrameProvider,
         platform_providers_1.defaultPageProvider,
         platform_providers_1.defaultDeviceProvider,
+        platform_providers_1.defaultAnimationDriverProvider,
         renderer_1.NativeScriptRootRenderer,
         di_1.provide(api_1.RootRenderer, { useClass: renderer_1.NativeScriptRootRenderer }),
         renderer_1.NativeScriptRenderer,
@@ -85,27 +84,16 @@ function bootstrap(appComponentType, customProviders) {
     if (lang_1.isPresent(customProviders)) {
         appProviders.push(customProviders);
     }
-    // Http Setup    
-    // Since HTTP_PROVIDERS can be added with customProviders above, this must come after
-    appProviders.push([
-        di_1.provide(http_1.XSRFStrategy, { useValue: new ns_http_1.NSXSRFStrategy() }),
-        ns_file_system_1.NSFileSystem,
-        di_1.provide(http_1.Http, {
-            useFactory: function (backend, options, nsFileSystem) {
-                return new ns_http_1.NSHttp(backend, options, nsFileSystem);
-            }, deps: [http_1.XHRBackend, http_1.RequestOptions, ns_file_system_1.NSFileSystem]
-        })
-    ]);
     var platform = core_1.getPlatform();
     if (!lang_1.isPresent(platform)) {
         platform = core_1.createPlatform(core_1.ReflectiveInjector.resolveAndCreate(platformProviders));
     }
-    // reflector.reflectionCapabilities = new ReflectionCapabilities();
     var appInjector = core_1.ReflectiveInjector.resolveAndCreate(appProviders, platform.injector);
     return core_1.coreLoadAndBootstrap(appComponentType, appInjector);
 }
 exports.bootstrap = bootstrap;
 function createNavigationEntry(params, resolve, reject, isReboot) {
+    if (isReboot === void 0) { isReboot = false; }
     var navEntry = {
         create: function () {
             var page = new page_1.Page();
@@ -122,7 +110,9 @@ function createNavigationEntry(params, resolve, reject, isReboot) {
                     //profiling.stop('ng-bootstrap');
                     trace_1.rendererLog('ANGULAR BOOTSTRAP DONE.');
                     lastBootstrappedApp = new WeakRef(compRef);
-                    resolve(compRef);
+                    if (resolve) {
+                        resolve(compRef);
+                    }
                 }, function (err) {
                     trace_1.rendererError('ERROR BOOTSTRAPPING ANGULAR');
                     var errorMessage = err.message + "\n\n" + err.stack;
@@ -130,7 +120,9 @@ function createNavigationEntry(params, resolve, reject, isReboot) {
                     var view = new text_view_1.TextView();
                     view.text = errorMessage;
                     page.content = view;
-                    reject(err);
+                    if (reject) {
+                        reject(err);
+                    }
                 });
             };
             page.on('loaded', onLoadedHandler);
@@ -148,16 +140,14 @@ function nativeScriptBootstrap(appComponentType, customProviders, appOptions) {
     if (appOptions && appOptions.cssFile) {
         application.cssFile = appOptions.cssFile;
     }
-    return new Promise(function (resolve, reject) {
-        var navEntry = createNavigationEntry(bootstrapCache, resolve, reject, false);
-        application.start(navEntry);
-    });
+    var navEntry = createNavigationEntry(bootstrapCache);
+    application.start(navEntry);
 }
 exports.nativeScriptBootstrap = nativeScriptBootstrap;
 // Patch livesync
-var _baseLiveSync = global.__onLiveSync;
-global.__onLiveSync = function () {
-    trace_1.rendererLog("LiveSync Started");
+var _baseLiveSyncCore = global.__onLiveSyncCore;
+global.__onLiveSyncCore = function () {
+    trace_1.rendererLog("ANGULAR LiveSync Started");
     if (bootstrapCache) {
         exports.onBeforeLivesync.next(lastBootstrappedApp ? lastBootstrappedApp.get() : null);
         var frame = frame_1.topmost();
@@ -170,7 +160,7 @@ global.__onLiveSync = function () {
         }
     }
     else {
-        _baseLiveSync();
+        _baseLiveSyncCore();
     }
 };
 //# sourceMappingURL=application.js.map

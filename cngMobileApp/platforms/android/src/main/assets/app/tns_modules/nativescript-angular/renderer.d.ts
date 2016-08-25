@@ -1,15 +1,19 @@
+import { NgZone } from '@angular/core';
 import { Renderer, RootRenderer, RenderComponentType, RenderDebugInfo } from '@angular/core/src/render/api';
 import { AnimationKeyframe } from '@angular/core/src/animation/animation_keyframe';
 import { AnimationPlayer } from '@angular/core/src/animation/animation_player';
 import { AnimationStyles } from '@angular/core/src/animation/animation_styles';
+import { AnimationDriver } from '@angular/core/src/animation/animation_driver';
 import { View } from "ui/core/view";
 import { Page } from 'ui/page';
 import { ViewUtil, NgView } from "./view-util";
 import { Device } from "platform";
 export declare class NativeScriptRootRenderer implements RootRenderer {
     private _rootView;
+    private _animationDriver;
+    private _zone;
     private _viewUtil;
-    constructor(rootView: View, device: Device);
+    constructor(_rootView: View, device: Device, _animationDriver: AnimationDriver, _zone: NgZone);
     private _registeredComponents;
     rootView: View;
     page: Page;
@@ -17,13 +21,14 @@ export declare class NativeScriptRootRenderer implements RootRenderer {
     renderComponent(componentProto: RenderComponentType): Renderer;
 }
 export declare class NativeScriptRenderer extends Renderer {
-    private _rootRenderer;
+    private rootRenderer;
     private componentProto;
+    private animationDriver;
+    private zone;
     private componentProtoId;
     private hasComponentStyles;
-    private rootRenderer;
     private viewUtil;
-    constructor(_rootRenderer: NativeScriptRootRenderer, componentProto: RenderComponentType);
+    constructor(rootRenderer: NativeScriptRootRenderer, componentProto: RenderComponentType, animationDriver: AnimationDriver, zone: NgZone);
     private attrReplacer;
     private attrSanitizer;
     private replaceNgAttribute(input, componentId);
@@ -33,8 +38,6 @@ export declare class NativeScriptRenderer extends Renderer {
     projectNodes(parentElement: NgView, nodes: NgView[]): void;
     attachViewAfter(anchorNode: NgView, viewRootNodes: NgView[]): void;
     detachView(viewRootNodes: NgView[]): void;
-    animateNodeEnter(node: NgView): void;
-    animateNodeLeave(node: NgView): void;
     destroyView(hostElement: NgView, viewAllNodes: NgView[]): void;
     setElementProperty(renderElement: NgView, propertyName: string, propertyValue: any): void;
     setElementAttribute(renderElement: NgView, attributeName: string, attributeValue: string): void;

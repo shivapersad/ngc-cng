@@ -1,0 +1,25 @@
+<ActionBar [title]="title"></ActionBar>
+
+<StackLayout>
+
+    <Label class="header" text="Licensed CNG Converters"></Label>
+
+    <ListView [items]="licensed" (itemTap)="onLicensedItemTap($event)">
+        <template let-item="item" let-i="index">
+            <StackLayout>
+                <Label class="listItem" [text]="item.name"></Label>
+            </StackLayout>
+        </template>
+    </ListView>
+
+    <Label class="header" text="Approved CNG Converters"></Label>
+    
+    <ListView [items]="approved" (itemTap)="onApprovedItemTap($event)">
+        <template let-item="item" let-index="index">
+            <StackLayout>
+                <Label class="listItem" [text]="item.name"></Label>
+            </StackLayout>
+        </template>
+    </ListView>
+
+</StackLayout>

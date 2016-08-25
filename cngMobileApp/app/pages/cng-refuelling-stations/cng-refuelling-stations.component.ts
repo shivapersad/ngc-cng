@@ -64,7 +64,6 @@ export class CNGRefuellingStationsComponent implements OnDestroy {
     }
     
     public onItemTap(args):void {
-        console.log("Tapped Item: " + args.index);
         this._router.navigate(["/station/" + args.index]);
     }
 
@@ -103,8 +102,8 @@ export class CNGRefuellingStationsComponent implements OnDestroy {
             margins: {
             left: 50, // default 0 
             right: 50, // default 0 
-            top: 100, // default 0 
-            bottom: 50 // default 0 
+            top: 130, // default 0 
+            bottom: 60 // default 0 
             },
             center: { // optional without a default 
             lat: 10.6918,

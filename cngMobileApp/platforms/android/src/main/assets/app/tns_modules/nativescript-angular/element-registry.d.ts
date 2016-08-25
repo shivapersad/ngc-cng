@@ -9,7 +9,7 @@ export interface ViewClassMeta {
 export interface ViewExtensions {
     nodeName: string;
     templateParent: NgView;
-    cssClasses: Map<string, boolean>;
+    ngCssClasses: Map<string, boolean>;
     meta: ViewClassMeta;
 }
 export interface ViewClass {

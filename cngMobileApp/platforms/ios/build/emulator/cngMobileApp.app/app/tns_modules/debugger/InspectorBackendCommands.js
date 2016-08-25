@@ -448,3 +448,4 @@ var WorkerDomain;
     }());
     WorkerDomain.WorkerFrontend = WorkerFrontend;
 })(WorkerDomain = exports.WorkerDomain || (exports.WorkerDomain = {}));
+//# sourceMappingURL=InspectorBackendCommands.js.map

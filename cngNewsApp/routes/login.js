@@ -12,13 +12,11 @@ router.get('/', function(req, res) {
   else {
     res.render('login');
   }
-  //console.log("Login page: " + JSON.stringify(req.session));
 });
 
 router.post('/', passport.authenticate('local', {
   successRedirect: '/homepage',
   failureRedirect: '/'
-  //failureFlash: 'Invalid username or password'
 }));
 
 passport.use(new LocalStrategy((username, password, done) => {

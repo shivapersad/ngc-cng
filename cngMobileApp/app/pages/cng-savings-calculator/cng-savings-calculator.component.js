@@ -14,7 +14,7 @@ var CNGSavingsCalculatorComponent = (function () {
         this.cngSavings.fuelBill = 200;
         this.cngSavings.petrolCost = 1.98;
         this.cngSavings.cngCost = 1;
-        this.cngSavings.costToConvert = 0;
+        //this.cngSavings.costToConvert = 0;
         this.cngSavings.savings = 0;
         this.barSelectedIndex = 0;
         this.totalFuelBill = this.cngSavings.vehicles * this.cngSavings.fuelBill;
@@ -23,15 +23,12 @@ var CNGSavingsCalculatorComponent = (function () {
     }
     CNGSavingsCalculatorComponent.prototype.calculateSavings = function (bar) {
         if (bar.selectedIndex == 0) {
-            //console.log("Diesel selected");
             this.cngSavings.petrolCost = 1.98;
         }
         else if (bar.selectedIndex == 1) {
-            //console.log("Super selected");
             this.cngSavings.petrolCost = 3.58;
         }
         else {
-            //console.log("Premium selected");
             this.cngSavings.petrolCost = 5.75;
         }
         this.totalFuelBill = this.cngSavings.vehicles * this.cngSavings.fuelBill;
@@ -44,7 +41,6 @@ var CNGSavingsCalculatorComponent = (function () {
         this.cngSavings.fuelBill = 200;
         this.cngSavings.petrolCost = 1.98;
         this.cngSavings.cngCost = 1;
-        this.cngSavings.costToConvert = 0;
         this.cngSavings.savings = 0;
         this.totalFuelBill = this.cngSavings.vehicles * this.cngSavings.fuelBill;
         this.totalLitresPetrol = this.cngSavings.fuelBill / this.cngSavings.petrolCost;

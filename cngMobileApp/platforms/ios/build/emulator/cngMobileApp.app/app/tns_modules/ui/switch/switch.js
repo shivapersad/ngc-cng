@@ -90,3 +90,4 @@ var SwitchStyler = (function () {
 }());
 exports.SwitchStyler = SwitchStyler;
 SwitchStyler.registerHandlers();
+//# sourceMappingURL=switch.js.map

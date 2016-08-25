@@ -1,5 +1,5 @@
 clang version 3.8.0 (tags/RELEASE_380/final)
-Target: i386-apple-darwin
+Target: i386-apple-darwin15.6.0
 Thread model: posix
 InstalledDir: 
 clang Invocation:
@@ -25,7 +25,7 @@ ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platf
  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/System/Library/Frameworks (framework directory)
 End of search list.
 clang version 3.8.0 (tags/RELEASE_380/final)
-Target: i386-apple-darwin
+Target: i386-apple-darwin15.6.0
 Thread model: posix
 InstalledDir: 
 clang Invocation:
@@ -51,14 +51,48 @@ ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platf
  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/usr/include
  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator9.3.sdk/System/Library/Frameworks (framework directory)
 End of search list.
-In file included from umbrella.h:785:
-In file included from /Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/Pods/Mapbox-iOS-SDK/dynamic/Mapbox.framework/Headers/Mapbox.h:15:
-/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/Pods/Mapbox-iOS-SDK/dynamic/Mapbox.framework/Headers/MGLMapView.h:137:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+In file included from umbrella.h:603:
+In file included from /Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TelerikUI.h:77:
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TKChartAxis.h:182:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) TKRange * __nonnull zoomRange;
+^
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TKChartAxis.h:182:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:603:
+In file included from /Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TelerikUI.h:270:
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TKEntityProperty.h:88:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) NSString *groupName;
+^
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TKEntityProperty.h:88:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:603:
+In file included from /Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TelerikUI.h:274:
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TKDataFormEditor.h:83:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic, nullable) id value;
+^
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TKDataFormEditor.h:83:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:603:
+In file included from /Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TelerikUI.h:296:
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TKEntityPropertyGroupEditorsView.h:19:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<TKLayout> layout;
+^
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TKEntityPropertyGroupEditorsView.h:19:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:603:
+In file included from /Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TelerikUI.h:357:
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TKGridLayoutCellDefinition.h:87:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) NSNumber *row;
+^
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TKGridLayoutCellDefinition.h:87:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TKGridLayoutCellDefinition.h:92:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) NSNumber *column;
+^
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/../../lib/iOS/TelerikUI.framework/Headers/TKGridLayoutCellDefinition.h:92:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:787:
+In file included from /Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/Pods/Mapbox-iOS-SDK/dynamic/Mapbox.framework/Headers/Mapbox.h:20:
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/Pods/Mapbox-iOS-SDK/dynamic/Mapbox.framework/Headers/MGLMapView.h:155:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
 @property (nonatomic, null_resettable) NSURL *styleURL;
 ^
-/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/Pods/Mapbox-iOS-SDK/dynamic/Mapbox.framework/Headers/MGLMapView.h:137:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
-/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/Pods/Mapbox-iOS-SDK/dynamic/Mapbox.framework/Headers/MGLMapView.h:181:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/Pods/Mapbox-iOS-SDK/dynamic/Mapbox.framework/Headers/MGLMapView.h:155:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/Pods/Mapbox-iOS-SDK/dynamic/Mapbox.framework/Headers/MGLMapView.h:213:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
 @property (nonatomic) NS_ARRAY_OF(NSString *) *styleClasses;
 ^
-/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/Pods/Mapbox-iOS-SDK/dynamic/Mapbox.framework/Headers/MGLMapView.h:181:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
-4 warnings generated.
+/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/ios/Pods/Mapbox-iOS-SDK/dynamic/Mapbox.framework/Headers/MGLMapView.h:213:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+16 warnings generated.

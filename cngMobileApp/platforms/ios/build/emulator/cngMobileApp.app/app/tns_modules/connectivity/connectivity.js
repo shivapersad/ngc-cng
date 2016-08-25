@@ -71,3 +71,4 @@ function stopMonitoring() {
     }
 }
 exports.stopMonitoring = stopMonitoring;
+//# sourceMappingURL=connectivity.js.map

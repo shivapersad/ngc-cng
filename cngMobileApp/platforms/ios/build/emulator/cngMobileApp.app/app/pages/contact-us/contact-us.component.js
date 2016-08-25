@@ -16,13 +16,6 @@ var ContactUsComponent = (function () {
         this.contactForm.emailAddress = "";
         this.contactForm.subject = "";
         this.contactForm.content = "";
-        /*
-        this.firstName = "John";
-        this.lastName = "Doe";
-        this.emailAddress = "john.doe@tester.com";
-        this.subject = "";
-        this.content = "tester123214 @!#!@";
-        */
     }
     // Function: sendContactForm
     // Parameters: none
@@ -75,19 +68,11 @@ var ContactUsComponent = (function () {
     // Paramters: none
     // Clears the inputs from the Contact Form
     ContactUsComponent.prototype.clearForm = function () {
-        console.log("Clearing form");
         this.contactForm.firstName = "";
         this.contactForm.lastName = "";
         this.contactForm.emailAddress = "";
         this.contactForm.subject = "";
         this.contactForm.content = "";
-        /*
-        this.firstName = "";
-        this.lastName = "";
-        this.emailAddress = "";
-        this.subject = "";
-        this.content = "";
-        */
     };
     ContactUsComponent.prototype.validateContactForm = function () {
         if (this.contactForm.firstName.length > 0) {
@@ -134,14 +119,13 @@ var ContactUsComponent = (function () {
             okButtonText: buttonTxt
         })
             .then(function () {
-            console.log("Dialog closed!");
             _this._router.navigate(["/"]);
         });
     };
     ContactUsComponent = __decorate([
         core_1.Component({
             templateUrl: "pages/contact-us/contact-us.html",
-            styleUrls: ["pages/contact-us/contact-us.css", "pages/contact-us/contact-us-common.css"]
+            styleUrls: ["pages/contact-us/contact-us.css"]
         }), 
         __metadata('design:paramtypes', [router_1.Router])
     ], ContactUsComponent);

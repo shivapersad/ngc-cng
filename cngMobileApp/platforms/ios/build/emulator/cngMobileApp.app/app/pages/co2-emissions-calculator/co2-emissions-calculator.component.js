@@ -2,13 +2,13 @@
 var core_1 = require("@angular/core");
 var CO2EmissionsCalculatorComponent = (function () {
     function CO2EmissionsCalculatorComponent() {
+        this.title = "CO2 Emissions Calculator";
     }
     CO2EmissionsCalculatorComponent = __decorate([
         core_1.Component({
             selector: "co2-emissions-calculator",
             templateUrl: "pages/co2-emissions-calculator/co2-emissions-calculator.html",
-            styleUrls: ["pages/co2-emissions-calculator/co2-emissions-calculator.css",
-                "pages/co2-emissions-calculator/co2-emissions-calculator-common.css"]
+            styleUrls: ["pages/co2-emissions-calculator/co2-emissions-calculator.css"]
         }), 
         __metadata('design:paramtypes', [])
     ], CO2EmissionsCalculatorComponent);

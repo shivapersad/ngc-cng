@@ -49,7 +49,7 @@ var NSHttp = (function (_super) {
     };
     NSHttp = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.ConnectionBackend, http_1.RequestOptions, ns_file_system_1.NSFileSystem])
+        __metadata('design:paramtypes', [http_1.ConnectionBackend, Object, ns_file_system_1.NSFileSystem])
     ], NSHttp);
     return NSHttp;
 }(http_1.Http));
@@ -63,4 +63,13 @@ function responseOptions(body, status, url) {
         url: url
     }));
 }
+exports.NS_HTTP_PROVIDERS = [
+    http_1.HTTP_PROVIDERS,
+    { provide: http_1.XSRFStrategy, useValue: new NSXSRFStrategy() },
+    ns_file_system_1.NSFileSystem,
+    { provide: http_1.Http, useFactory: function (backend, options, nsFileSystem) {
+            return new NSHttp(backend, options, nsFileSystem);
+        }, deps: [http_1.XHRBackend, http_1.RequestOptions, ns_file_system_1.NSFileSystem]
+    }
+];
 //# sourceMappingURL=ns-http.js.map

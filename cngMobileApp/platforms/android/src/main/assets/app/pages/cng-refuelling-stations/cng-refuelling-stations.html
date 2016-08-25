@@ -1,4 +1,16 @@
-<ActionBar title="CNG Refuelling Stations"></ActionBar>
-<StackLayout>
-    <Button text="CNG Refuelling Stations"></Button>
-</StackLayout>
+<ActionBar [title]="title"></ActionBar>
+<TabView #tabview (selectedIndexChanged)="tabIndexChanged($event)">
+    <StackLayout *tabItem="{title: 'List'}">
+        <ListView [items]="arr" (itemTap)="onItemTap($event)">
+            <template let-item="item" let-i="index">
+                <StackLayout>
+                    <Label [text]="item.name"></Label>
+                    <Label [text]="item.address"></Label>
+                </StackLayout>
+            </template>
+        </ListView>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Map'}">
+        <Label text="Map View"></Label>
+    </StackLayout>
+</TabView>

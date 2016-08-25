@@ -14,7 +14,12 @@ export declare class TabViewItemDirective {
     private templateRef;
     private viewContainer;
     private item;
+    private _title;
+    private _iconSource;
     constructor(owner: TabViewDirective, templateRef: TemplateRef<any>, viewContainer: ViewContainerRef);
     config: any;
+    title: string;
+    iconSource: string;
+    private ensureItem();
     ngOnInit(): void;
 }

@@ -1,10 +1,17 @@
+var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var trace_1 = require("../trace");
 var frame_1 = require("ui/frame");
+var lang_1 = require('@angular/core/src/facade/lang');
+var defaultNavOptions = {
+    clearHistory: false,
+    animated: true
+};
 var NSLocationStrategy = (function (_super) {
     __extends(NSLocationStrategy, _super);
-    function NSLocationStrategy() {
+    function NSLocationStrategy(frame) {
         _super.call(this);
+        this.frame = frame;
         this.states = new Array();
         this.popStateCallbacks = new Array();
         this._isPageNavigationgBack = false;
@@ -12,9 +19,10 @@ var NSLocationStrategy = (function (_super) {
         trace_1.routerLog("NSLocationStrategy.constructor()");
     }
     NSLocationStrategy.prototype.path = function () {
-        trace_1.routerLog("NSLocationStrategy.path()");
         var state = this.peekState();
-        return state ? state.url : "/";
+        var result = state ? state.url : "/";
+        trace_1.routerLog("NSLocationStrategy.path(): " + result);
+        return result;
     };
     NSLocationStrategy.prototype.prepareExternalUrl = function (internal) {
         trace_1.routerLog("NSLocationStrategy.prepareExternalUrl() internal: " + internal);
@@ -25,7 +33,13 @@ var NSLocationStrategy = (function (_super) {
         this.pushStateInternal(state, title, url, queryParams);
     };
     NSLocationStrategy.prototype.pushStateInternal = function (state, title, url, queryParams) {
-        var isNewPage = this._isPageNavigatingForward;
+        var isNewPage = this._isPageNavigatingForward || this.states.length === 0;
+        var navOptions = this._currentNavigationOptions || defaultNavOptions;
+        if (navOptions.clearHistory) {
+            trace_1.routerLog("NSLocationStrategy.pushStateInternal clearing states history");
+            this.states.length = 0;
+        }
+        this._currentNavigationOptions = undefined;
         this._isPageNavigatingForward = false;
         this.states.push({
             state: state,
@@ -36,16 +50,21 @@ var NSLocationStrategy = (function (_super) {
         });
     };
     NSLocationStrategy.prototype.replaceState = function (state, title, url, queryParams) {
-        trace_1.routerLog("NSLocationStrategy.replaceState state: " + state + ", title: " + title + ", url: " + url + ", queryParams: " + queryParams);
         if (this.states.length > 0) {
-            var oldState = this.states.pop();
-            trace_1.routerLog("NSLocationStrategy.replaceState state poped: " + oldState.state + ", title: " + oldState.title + ", url: " + oldState.url + ", queryParams: " + oldState.queryParams);
+            trace_1.routerLog("NSLocationStrategy.replaceState changing exisitng state: " + state + ", title: " + title + ", url: " + url + ", queryParams: " + queryParams);
+            var topState = this.peekState();
+            topState.state = state;
+            topState.title = title;
+            topState.url = url;
+            topState.queryParams = queryParams;
         }
-        this.pushStateInternal(state, title, url, queryParams);
+        else {
+            trace_1.routerLog("NSLocationStrategy.replaceState pushing new state: " + state + ", title: " + title + ", url: " + url + ", queryParams: " + queryParams);
+            this.pushStateInternal(state, title, url, queryParams);
+        }
     };
     NSLocationStrategy.prototype.forward = function () {
-        trace_1.routerLog("NSLocationStrategy.forward");
-        throw new Error("Not implemented");
+        throw new Error("NSLocationStrategy.forward() - not implemented");
     };
     NSLocationStrategy.prototype.back = function () {
         if (this._isPageNavigationgBack) {
@@ -53,7 +72,7 @@ var NSLocationStrategy = (function (_super) {
             // clear the stack until we get to a page navigation state
             var state = this.states.pop();
             var count = 1;
-            while (!state.isPageNavigation) {
+            while (!(state.isPageNavigation)) {
                 state = this.states.pop();
                 count++;
             }
@@ -65,7 +84,7 @@ var NSLocationStrategy = (function (_super) {
             if (state.isPageNavigation) {
                 // This was a page navigation - so navigate through frame.
                 trace_1.routerLog("NSLocationStrategy.back() while not navigating back but top state is page - will call frame.goback()");
-                frame_1.topmost().goBack();
+                this.frame.goBack();
             }
             else {
                 // Nested navigation - just pop the state
@@ -96,31 +115,52 @@ var NSLocationStrategy = (function (_super) {
         }
         return null;
     };
+    NSLocationStrategy.prototype.toString = function () {
+        return this.states
+            .map(function (v, i) { return (i + ".[" + (v.isPageNavigation ? "PAGE" : "INTERNAL") + "] \"" + v.url + "\""); })
+            .reverse()
+            .join("\n");
+    };
     // Methods for syncing with page navigation in PageRouterOutlet
-    NSLocationStrategy.prototype.beginBackPageNavigation = function () {
+    NSLocationStrategy.prototype._beginBackPageNavigation = function () {
         trace_1.routerLog("NSLocationStrategy.startGoBack()");
         if (this._isPageNavigationgBack) {
             throw new Error("Calling startGoBack while going back.");
         }
         this._isPageNavigationgBack = true;
     };
-    NSLocationStrategy.prototype.finishBackPageNavigation = function () {
+    NSLocationStrategy.prototype._finishBackPageNavigation = function () {
         trace_1.routerLog("NSLocationStrategy.finishBackPageNavigation()");
         if (!this._isPageNavigationgBack) {
             throw new Error("Calling endGoBack while not going back.");
         }
         this._isPageNavigationgBack = false;
     };
-    NSLocationStrategy.prototype.isPageNavigatingBack = function () {
+    NSLocationStrategy.prototype._isPageNavigatingBack = function () {
         return this._isPageNavigationgBack;
     };
-    NSLocationStrategy.prototype.navigateToNewPage = function () {
+    NSLocationStrategy.prototype._beginPageNavigation = function () {
         trace_1.routerLog("NSLocationStrategy.navigateToNewPage()");
         if (this._isPageNavigatingForward) {
             throw new Error("Calling navigateToNewPage while already navigating to new page.");
         }
         this._isPageNavigatingForward = true;
+        return this._currentNavigationOptions || defaultNavOptions;
     };
+    NSLocationStrategy.prototype._setNavigationOptions = function (options) {
+        this._currentNavigationOptions = {
+            clearHistory: lang_1.isPresent(options.clearHistory) ? options.clearHistory : false,
+            animated: lang_1.isPresent(options.animated) ? options.animated : true,
+            transition: options.transition
+        };
+    };
+    NSLocationStrategy.prototype._getSatates = function () {
+        return this.states.slice();
+    };
+    NSLocationStrategy = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [frame_1.Frame])
+    ], NSLocationStrategy);
     return NSLocationStrategy;
 }(common_1.LocationStrategy));
 exports.NSLocationStrategy = NSLocationStrategy;

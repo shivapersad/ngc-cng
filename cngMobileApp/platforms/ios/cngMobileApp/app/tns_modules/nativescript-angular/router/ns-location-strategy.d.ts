@@ -1,10 +1,25 @@
 import { LocationStrategy } from '@angular/common';
+import { Frame, NavigationTransition } from "ui/frame";
+export interface NavigationOptions {
+    clearHistory?: boolean;
+    animated?: boolean;
+    transition?: NavigationTransition;
+}
+export interface LocationState {
+    state: any;
+    title: string;
+    url: string;
+    queryParams: string;
+    isPageNavigation: boolean;
+}
 export declare class NSLocationStrategy extends LocationStrategy {
+    private frame;
     private states;
     private popStateCallbacks;
     private _isPageNavigationgBack;
     private _isPageNavigatingForward;
-    constructor();
+    private _currentNavigationOptions;
+    constructor(frame: Frame);
     path(): string;
     prepareExternalUrl(internal: string): string;
     pushState(state: any, title: string, url: string, queryParams: string): void;
@@ -16,8 +31,11 @@ export declare class NSLocationStrategy extends LocationStrategy {
     getBaseHref(): string;
     private callPopState(state, pop?);
     private peekState();
-    beginBackPageNavigation(): void;
-    finishBackPageNavigation(): void;
-    isPageNavigatingBack(): boolean;
-    navigateToNewPage(): void;
+    toString(): string;
+    _beginBackPageNavigation(): void;
+    _finishBackPageNavigation(): void;
+    _isPageNavigatingBack(): boolean;
+    _beginPageNavigation(): NavigationOptions;
+    _setNavigationOptions(options: NavigationOptions): void;
+    _getSatates(): Array<LocationState>;
 }

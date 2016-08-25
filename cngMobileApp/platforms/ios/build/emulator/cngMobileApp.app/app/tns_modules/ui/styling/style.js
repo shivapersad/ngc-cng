@@ -216,6 +216,13 @@ function isWidthHeightValid(value) {
 function isMinWidthHeightValid(value) {
     return !isNaN(value) && value >= 0.0 && isFinite(value);
 }
+function onBackgroundColorPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (!color_1.Color.equals(currentBackground.color, data.newValue)) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withColor(data.newValue));
+    }
+}
 function onBackgroundImagePropertyChanged(data) {
     var style = data.object;
     var url = data.newValue;
@@ -255,20 +262,6 @@ function onBackgroundImagePropertyChanged(data) {
         style._setValue(exports.backgroundInternalProperty, currentBackground.withImage(undefined));
     }
 }
-function onBackgroundColorPropertyChanged(data) {
-    var style = data.object;
-    var currentBackground = style._getValue(exports.backgroundInternalProperty);
-    if (!color_1.Color.equals(currentBackground.color, data.newValue)) {
-        style._setValue(exports.backgroundInternalProperty, currentBackground.withColor(data.newValue));
-    }
-}
-function onBackgroundSizePropertyChanged(data) {
-    var style = data.object;
-    var currentBackground = style._getValue(exports.backgroundInternalProperty);
-    if (data.newValue !== currentBackground.size) {
-        style._setValue(exports.backgroundInternalProperty, currentBackground.withSize(data.newValue));
-    }
-}
 function onBackgroundRepeatPropertyChanged(data) {
     var style = data.object;
     var currentBackground = style._getValue(exports.backgroundInternalProperty);
@@ -281,6 +274,49 @@ function onBackgroundPositionPropertyChanged(data) {
     var currentBackground = style._getValue(exports.backgroundInternalProperty);
     if (data.newValue !== currentBackground.position) {
         style._setValue(exports.backgroundInternalProperty, currentBackground.withPosition(data.newValue));
+    }
+}
+function onBackgroundSizePropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.size) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withSize(data.newValue));
+    }
+}
+function onBorderWidthPropertyChanged(data) {
+    if (platform.isAndroid) {
+        var style = data.object;
+        var currentBackground = style._getValue(exports.backgroundInternalProperty);
+        if (data.newValue !== currentBackground.borderWidth) {
+            style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderWidth(data.newValue));
+        }
+    }
+}
+function onBorderColorPropertyChanged(data) {
+    if (platform.isAndroid) {
+        var style = data.object;
+        var currentBackground = style._getValue(exports.backgroundInternalProperty);
+        if (data.newValue !== currentBackground.borderColor) {
+            style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderColor(data.newValue));
+        }
+    }
+}
+function onBorderRadiusPropertyChanged(data) {
+    if (platform.isAndroid) {
+        var style = data.object;
+        var currentBackground = style._getValue(exports.backgroundInternalProperty);
+        if (data.newValue !== currentBackground.borderRadius) {
+            style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderRadius(data.newValue));
+        }
+    }
+}
+function onClipPathPropertyChanged(data) {
+    if (platform.isAndroid) {
+        var style = data.object;
+        var currentBackground = style._getValue(exports.backgroundInternalProperty);
+        if (data.newValue !== currentBackground.clipPath) {
+            style._setValue(exports.backgroundInternalProperty, currentBackground.withClipPath(data.newValue));
+        }
     }
 }
 function getHandlerInternal(propertyId, classInfo) {
@@ -319,7 +355,7 @@ function isTextTransformValid(value) {
 function isWhiteSpaceValid(value) {
     return value === enums.WhiteSpace.nowrap || value === enums.WhiteSpace.normal;
 }
-function isPaddingValid(value) {
+function isNonNegativeFiniteNumber(value) {
     return isFinite(value) && !isNaN(value) && value >= 0;
 }
 var supportedPaths = ["rect", "circle", "ellipse", "polygon"];
@@ -876,6 +912,7 @@ var Style = (function (_super) {
         }
     };
     Style.prototype._resetCssValues = function () {
+        this._view._unregisterAllAnimations();
         var that = this;
         this._eachSetProperty(function (property) {
             that._resetValue(property, dependency_observable_1.ValueSource.Css);
@@ -886,6 +923,15 @@ var Style = (function (_super) {
         var that = this;
         this._eachSetProperty(function (property) {
             that._resetValue(property);
+            return true;
+        });
+    };
+    Style.prototype._inheritStyleProperties = function (parent) {
+        var _this = this;
+        parent.style._eachSetPropertyValue(function (property, value) {
+            if (property.inheritable) {
+                _this._setValue(property, value, dependency_observable_1.ValueSource.Inherited);
+            }
             return true;
         });
     };
@@ -900,34 +946,30 @@ var Style = (function (_super) {
         this._view._checkMetadataOnPropertyChanged(property.metadata);
         this._applyProperty(property, newValue);
     };
-    Style.prototype._syncNativeProperties = function () {
-        var that = this;
-        styleProperty.eachProperty(function (p) {
-            var value = that._getValue(p);
-            var valueSource = that._getValueSource(p);
-            if (valueSource !== dependency_observable_1.ValueSource.Default && types.isDefined(value)) {
-                that._applyProperty(p, value);
-            }
-        });
-    };
     Style.prototype._sizeChanged = function () {
         if (!this._getValue(exports.backgroundInternalProperty).isEmpty()) {
-            this._applyProperty(exports.backgroundInternalProperty, this._getValue(exports.backgroundInternalProperty));
+            this._applyStyleProperty(exports.backgroundInternalProperty, this._getValue(exports.backgroundInternalProperty));
         }
         var clipPathPropertyValue = this._getValue(exports.clipPathProperty);
         if (types.isString(clipPathPropertyValue) && clipPathPropertyValue !== "") {
-            this._applyProperty(exports.clipPathProperty, clipPathPropertyValue);
+            this._applyStyleProperty(exports.clipPathProperty, clipPathPropertyValue);
         }
+    };
+    Style.prototype._syncNativeProperties = function () {
+        var _this = this;
+        this._eachSetPropertyValue(function (property, value) {
+            _this._applyStyleProperty(property, value);
+            return true;
+        });
     };
     Style.prototype._applyProperty = function (property, newValue) {
         this._applyStyleProperty(property, newValue);
-        if (this._view._childrenCount === 0 || !property.inheritable) {
-            return;
+        if (property.inheritable && this._view._childrenCount > 0) {
+            this._view._eachChildView(function (child) {
+                child.style._setValue(property, newValue, dependency_observable_1.ValueSource.Inherited);
+                return true;
+            });
         }
-        this._view._eachChildView(function (child) {
-            child.style._inheritStyleProperty(property);
-            return true;
-        });
     };
     Style.prototype._applyStyleProperty = function (property, newValue) {
         if (!this._view._shouldApplyStyleHandlers()) {
@@ -937,59 +979,31 @@ var Style = (function (_super) {
             this._nativeSetters.set(property, newValue);
             return;
         }
-        try {
-            var handler = getHandler(property, this._view);
-            if (!handler) {
-                if (trace.enabled) {
-                    trace.write("No handler for property: " + property.name + " with id: " + property.id + ", view:" + this._view, trace.categories.Style);
-                }
+        var handler = getHandler(property, this._view);
+        if (!handler) {
+            if (trace.enabled) {
+                trace.write("No handler for property: " + property.name + " with id: " + property.id + ", view:" + this._view, trace.categories.Style);
+            }
+        }
+        else {
+            if (trace.enabled) {
+                trace.write("Found handler for property: " + property.name + ", view:" + this._view, trace.categories.Style);
+            }
+            var shouldReset = false;
+            if (property.equalityComparer) {
+                shouldReset = property.equalityComparer(newValue, property.defaultValue);
             }
             else {
-                if (trace.enabled) {
-                    trace.write("Found handler for property: " + property.name + ", view:" + this._view, trace.categories.Style);
-                }
-                var shouldReset = false;
-                if (property.equalityComparer) {
-                    shouldReset = property.equalityComparer(newValue, property.defaultValue);
-                }
-                else {
-                    shouldReset = (newValue === property.defaultValue);
-                }
-                if (shouldReset) {
-                    handler.resetProperty(property, this._view);
-                }
-                else {
-                    handler.applyProperty(property, this._view, newValue);
-                }
-                this._view._onStylePropertyChanged(property);
+                shouldReset = (newValue === property.defaultValue);
             }
-        }
-        catch (ex) {
-            if (trace.enabled) {
-                trace.write("Error setting property: " + property.name + " on " + this._view + ": " + ex, trace.categories.Style, trace.messageType.error);
+            if (shouldReset) {
+                handler.resetProperty(property, this._view);
             }
-        }
-    };
-    Style.prototype._inheritStyleProperty = function (property) {
-        if (!property.inheritable) {
-            throw new Error("An attempt was made to inherit a style property which is not marked as 'inheritable'.");
-        }
-        var currentParent = this._view.parent;
-        var valueSource;
-        while (currentParent) {
-            valueSource = currentParent.style._getValueSource(property);
-            if (valueSource > dependency_observable_1.ValueSource.Default) {
-                this._setValue(property, currentParent.style._getValue(property), dependency_observable_1.ValueSource.Inherited);
-                break;
+            else {
+                handler.applyProperty(property, this._view, newValue);
             }
-            currentParent = currentParent.parent;
+            this._view._onStylePropertyChanged(property);
         }
-    };
-    Style.prototype._inheritStyleProperties = function () {
-        var _this = this;
-        styleProperty.eachInheritableProperty(function (p) {
-            _this._inheritStyleProperty(p);
-        });
     };
     Object.defineProperty(Style.prototype, "_nativeView", {
         get: function () {
@@ -1041,10 +1055,10 @@ exports.backgroundColorProperty = new styleProperty.Property("backgroundColor", 
 exports.backgroundRepeatProperty = new styleProperty.Property("backgroundRepeat", "background-repeat", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundRepeatPropertyChanged));
 exports.backgroundSizeProperty = new styleProperty.Property("backgroundSize", "background-size", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundSizePropertyChanged));
 exports.backgroundPositionProperty = new styleProperty.Property("backgroundPosition", "background-position", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundPositionPropertyChanged));
-exports.borderColorProperty = new styleProperty.Property("borderColor", "border-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, undefined, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
-exports.borderWidthProperty = new styleProperty.Property("borderWidth", "border-width", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, null, isPaddingValid), converters.numberConverter);
-exports.borderRadiusProperty = new styleProperty.Property("borderRadius", "border-radius", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, null, isPaddingValid), converters.numberConverter);
-exports.clipPathProperty = new styleProperty.Property("clipPath", "clip-path", new dependency_observable_1.PropertyMetadata(undefined, AffectsLayout, null, isClipPathValid));
+exports.borderWidthProperty = new styleProperty.Property("borderWidth", "border-width", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, onBorderWidthPropertyChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.borderColorProperty = new styleProperty.Property("borderColor", "border-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBorderColorPropertyChanged, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
+exports.borderRadiusProperty = new styleProperty.Property("borderRadius", "border-radius", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, onBorderRadiusPropertyChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.clipPathProperty = new styleProperty.Property("clipPath", "clip-path", new dependency_observable_1.PropertyMetadata(undefined, AffectsLayout, onClipPathPropertyChanged, isClipPathValid));
 exports.backgroundInternalProperty = new styleProperty.Property("_backgroundInternal", "_backgroundInternal", new dependency_observable_1.PropertyMetadata(background.Background.default, dependency_observable_1.PropertyMetadataSettings.None, undefined, undefined, background.Background.equals));
 exports.fontSizeProperty = new styleProperty.Property("fontSize", "font-size", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.Inheritable, onFontSizeChanged), converters.fontSizeConverter);
 exports.fontFamilyProperty = new styleProperty.Property("fontFamily", "font-family", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.Inheritable, onFontFamilyChanged));
@@ -1108,11 +1122,11 @@ function getNativePaddingBottom(instance) {
     return getNativePadding(nativeView, function (view) { return view.getPaddingBottom(); });
 }
 exports.nativePaddingsProperty = new styleProperty.Property("paddingNative", "paddingNative", new dependency_observable_1.PropertyMetadata(undefined, null, null, null, thicknessComparer));
-var defaultPadding = platform.device.os === platform.platformNames.android ? undefined : 0;
-exports.paddingLeftProperty = new styleProperty.Property("paddingLeft", "padding-left", new dependency_observable_1.PropertyMetadata(defaultPadding, AffectsLayout, onPaddingValueChanged, isPaddingValid), converters.numberConverter);
-exports.paddingRightProperty = new styleProperty.Property("paddingRight", "padding-right", new dependency_observable_1.PropertyMetadata(defaultPadding, AffectsLayout, onPaddingValueChanged, isPaddingValid), converters.numberConverter);
-exports.paddingTopProperty = new styleProperty.Property("paddingTop", "padding-top", new dependency_observable_1.PropertyMetadata(defaultPadding, AffectsLayout, onPaddingValueChanged, isPaddingValid), converters.numberConverter);
-exports.paddingBottomProperty = new styleProperty.Property("paddingBottom", "padding-bottom", new dependency_observable_1.PropertyMetadata(defaultPadding, AffectsLayout, onPaddingValueChanged, isPaddingValid), converters.numberConverter);
+var defaultPadding = platform.isAndroid ? undefined : 0;
+exports.paddingLeftProperty = new styleProperty.Property("paddingLeft", "padding-left", new dependency_observable_1.PropertyMetadata(defaultPadding, AffectsLayout, onPaddingValueChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.paddingRightProperty = new styleProperty.Property("paddingRight", "padding-right", new dependency_observable_1.PropertyMetadata(defaultPadding, AffectsLayout, onPaddingValueChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.paddingTopProperty = new styleProperty.Property("paddingTop", "padding-top", new dependency_observable_1.PropertyMetadata(defaultPadding, AffectsLayout, onPaddingValueChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.paddingBottomProperty = new styleProperty.Property("paddingBottom", "padding-bottom", new dependency_observable_1.PropertyMetadata(defaultPadding, AffectsLayout, onPaddingValueChanged, isNonNegativeFiniteNumber), converters.numberConverter);
 if (platform.device.os === platform.platformNames.android) {
     exports.paddingTopProperty.defaultValueGetter = getNativePaddingTop;
     exports.paddingLeftProperty.defaultValueGetter = getNativePaddingLeft;
@@ -1234,3 +1248,4 @@ exports.ignorePropertyHandler = new StylePropertyChangedHandler(function (view, 
 }, function (view, val) {
 });
 registerNoStylingClass("Frame");
+//# sourceMappingURL=style.js.map

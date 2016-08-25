@@ -11,29 +11,34 @@
         <TextField [(ngModel)]="cngSavings.fuelBill" keyboardType="number"></TextField> -->
 
         <Label text="Total Fuel Bill Per Week:"></Label>
-        <TextField class="noEdit" [(ngModel)]="totalFuelBill" editable="false"></TextField>
+        <TextField class="noEdit" [ngModel]='totalFuelBill | number:"1.2-2" ' (ngModel)='totalFuelBill' editable="false"></TextField>
+        <!-- <TextField class="noEdit" [(ngModel)]="totalFuelBill" editable="false"></TextField> -->
 
         <Label text="Diesel/Gasoline Cost Per Litre (TTD)"></Label>
         <SegmentedBar #bar class="bar" [items]="fuelItems" [barSelectedIndex]="barSelectedIndex" 
         (selectedIndexChange)="selectedBarIndexChanged(bar)"></SegmentedBar>
 
         <Label text="Litres of Diesel/Gasoline Bought"></Label>
-        <TextField class="noEdit" [(ngModel)]="strTotalLitresPetrol" editable="false"></TextField>
+        <TextField class="noEdit" [ngModel]='totalLitresPetrol | number:"1.2-2" ' (ngModel)='totalLitresPetrol' editable="false"></TextField>
 
         <Label text="CNG Cost Per Litre (TTD)"></Label>
         <TextField [(ngModel)]="cngSavings.cngCost" keyboardType="number"></TextField>
 
         <Label text="Litres of CNG Equivalent Bought"></Label>
-        <TextField [(ngModel)]="totalLitresCNG" editable="false"></TextField>
+        <TextField class="noEdit" [ngModel]='totalLitresCNG | number:"1.2-2" ' (ngModel)='totalLitresCNG' editable="false"></TextField>
 
+        <!--
         <Label text="Cost To Convert Each Vehicle"></Label>
         <TextField [(ngModel)]="cngSavings.costToConvert" keyboardType="number"></TextField>
+        -->
 
-        <Label class="savings" text="Each week using CNG could save (TTD):" width="100%" height="40"></Label>
-        <TextField class="savings" [(ngModel)]="strSavings" editable="false" width="100%" height="40"></TextField>
+        <Label class="savings" text="Each week using CNG could save (TTD):" width="100%"></Label>
+        <TextField class="noEdit savings" [ngModel]='cngSavings.savings | number:"1.2-2" ' (ngModel)='cngSavings.savings' editable="false" width="100%" height="40"></TextField>
 
-        <Button class="btnSavings" text="Calculate Savings" (tap)="calculateSavings(bar)"></Button>
-        <Button class="btnSavings" text="Clear Form" (tap)="clearForm()"></Button>
+        <StackLayout>
+            <Button text="Calculate Savings" (tap)="calculateSavings(bar)"></Button>
+            <Button text="Clear Form" (tap)="clearForm()"></Button>
+        </StackLayout>
 
     </WrapLayout>
 

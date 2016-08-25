@@ -36,7 +36,7 @@
   "_id": "nativescript-mapbox@1.3.0",
   "scripts": {},
   "_shasum": "7accf5513d11ffa2f74a83a6109384498e054705",
-  "_from": "nativescript-mapbox@latest",
+  "_from": "nativescript-mapbox@>=1.3.0 <2.0.0",
   "_resolved": "https://registry.npmjs.org/nativescript-mapbox/-/nativescript-mapbox-1.3.0.tgz",
   "_npmVersion": "2.14.7",
   "_nodeVersion": "4.2.2",

@@ -162,3 +162,4 @@ var iOSLocationManager = (function () {
     return iOSLocationManager;
 }());
 exports.iOSLocationManager = iOSLocationManager;
+//# sourceMappingURL=location.js.map

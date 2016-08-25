@@ -15,4 +15,4 @@ export declare const onBeforeLivesync: EventEmitter<ComponentRef<any>>;
 export declare const onAfterLivesync: EventEmitter<ComponentRef<any>>;
 export declare const NS_COMPILER_PROVIDERS: ProviderArray;
 export declare function bootstrap(appComponentType: any, customProviders?: ProviderArray): Promise<ComponentRef<any>>;
-export declare function nativeScriptBootstrap(appComponentType: any, customProviders?: ProviderArray, appOptions?: AppOptions): Promise<ComponentRef<any>>;
+export declare function nativeScriptBootstrap(appComponentType: any, customProviders?: ProviderArray, appOptions?: AppOptions): void;

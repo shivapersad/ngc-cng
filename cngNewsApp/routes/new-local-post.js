@@ -22,8 +22,6 @@ router.get('/', isAuthenticated, function(req, res) {
 /* POST new local post */
 
 router.post('/', isAuthenticated, function(req, res) {
-  //console.log("req.body: " + req.body);
-  //console.log("req.body.title: " + req.body.title);
 
   if (req.body.live == null) {
     live = "off";
@@ -40,7 +38,6 @@ router.post('/', isAuthenticated, function(req, res) {
     "username": JSON.stringify(req.session.passport.user.username).replace(/\"/g, "")
   }
   
-  //console.log("Post: " + JSON.stringify(post));
   conn.collection('local_posts').insert(post);
   console.log('Saved to database');
   res.redirect('/new-local-post');

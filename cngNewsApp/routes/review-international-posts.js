@@ -15,7 +15,6 @@ router.get('/', isAuthenticated, function(req, res) {
 
   internationalPostDetails.find(function(err, internationalPosts) {
     if (err) return console.error(err);
-    //console.log(internationalPosts);
     res.render('review-international-posts', {posts: internationalPosts});
   });
 })

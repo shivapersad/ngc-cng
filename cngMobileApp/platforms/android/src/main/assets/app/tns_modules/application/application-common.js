@@ -1,6 +1,7 @@
 require("globals");
 var observable = require("data/observable");
 var frame = require("ui/frame");
+require("../bundle-entry-points");
 var builder;
 function ensureBuilder() {
     if (!builder) {
@@ -74,7 +75,7 @@ function __onLiveSync() {
         var fileResolver = require("file-system/file-name-resolver");
         fileResolver.clearCache();
         loadCss();
-        frame.reloadPage();
+        global.__onLiveSyncCore();
     }
     catch (ex) {
         ensureBuilder();
@@ -83,3 +84,9 @@ function __onLiveSync() {
     }
 }
 exports.__onLiveSync = __onLiveSync;
+function __onLiveSyncCore() {
+    frame.reloadPage();
+}
+exports.__onLiveSyncCore = __onLiveSyncCore;
+global.__onLiveSyncCore = __onLiveSyncCore;
+//# sourceMappingURL=application-common.js.map

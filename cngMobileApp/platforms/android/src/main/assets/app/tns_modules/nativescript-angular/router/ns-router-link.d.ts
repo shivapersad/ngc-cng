@@ -1,6 +1,10 @@
-import { Router, ActivatedRoute } from '@angular/router';
+import { OnChanges } from '@angular/core';
+import { ActivatedRoute, Router, UrlTree } from '@angular/router';
+import { PageRoute } from "./page-router-outlet";
+import { RouterExtensions } from "./router-extensions";
+import { NavigationTransition } from "ui/frame";
 /**
- * The RouterLink directive lets you link to specific parts of your app.
+ * The nsRouterLink directive lets you link to specific parts of your app.
  *
  * Consider the following route configuration:
 
@@ -14,7 +18,7 @@ import { Router, ActivatedRoute } from '@angular/router';
  * <a [nsRouterLink]="['/user']">link to user component</a>
  * ```
  *
- * RouterLink expects the value to be an array of path segments, followed by the params
+ * NSRouterLink expects the value to be an array of path segments, followed by the params
  * for that level of routing. For instance `['/team', {teamId: 1}, 'user', {userId: 2}]`
  * means that we want to generate a link to `/team;teamId=1/user;userId=2`.
  *
@@ -24,19 +28,26 @@ import { Router, ActivatedRoute } from '@angular/router';
  * instead look in the current component's children for the route.
  * And if the segment begins with `../`, the router will go up one level.
  */
-export declare class NSRouterLink {
+export declare class NSRouterLink implements OnChanges {
     private router;
+    private navigator;
     private route;
+    private pageRoute;
     private commands;
     target: string;
     queryParams: {
         [k: string]: any;
     };
     fragment: string;
-    /**
-     * @internal
-     */
-    constructor(router: Router, route: ActivatedRoute);
+    clearHistory: boolean;
+    pageTransition: boolean | string | NavigationTransition;
+    urlTree: UrlTree;
+    private usePageRoute;
+    private currentRoute;
+    constructor(router: Router, navigator: RouterExtensions, route: ActivatedRoute, pageRoute: PageRoute);
     params: any[] | string;
     onTap(): void;
+    private getTransition();
+    ngOnChanges(changes: {}): any;
+    private updateUrlTree();
 }

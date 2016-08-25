@@ -24,10 +24,15 @@ function onFormattedTextPropertyChanged(data) {
     textBase._onFormattedTextPropertyChanged(data);
 }
 formattedTextProperty.metadata.onSetNativeValue = onFormattedTextPropertyChanged;
+var styleHandlersInitialized;
 var TextBase = (function (_super) {
     __extends(TextBase, _super);
     function TextBase() {
-        _super.apply(this, arguments);
+        _super.call(this);
+        if (!styleHandlersInitialized) {
+            styleHandlersInitialized = true;
+            tbs.TextBaseStyler.registerHandlers();
+        }
     }
     TextBase.prototype._onBindingContextChanged = function (oldValue, newValue) {
         _super.prototype._onBindingContextChanged.call(this, oldValue, newValue);
@@ -115,4 +120,4 @@ var TextBase = (function (_super) {
     return TextBase;
 }(view.View));
 exports.TextBase = TextBase;
-tbs.TextBaseStyler.registerHandlers();
+//# sourceMappingURL=text-base-common.js.map

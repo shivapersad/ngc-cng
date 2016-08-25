@@ -11,7 +11,6 @@ var isAuthenticated = function (req, res, next) {
 
 /* GET home page. */
 router.get('/', isAuthenticated, function(req, res) {
-  console.log("Login page: " + JSON.stringify(req.session));
   res.render('homepage');
 });
 

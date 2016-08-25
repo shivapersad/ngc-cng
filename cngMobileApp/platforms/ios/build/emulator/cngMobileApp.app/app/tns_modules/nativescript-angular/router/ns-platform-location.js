@@ -13,15 +13,12 @@ var NativescriptPlatformLocation = (function (_super) {
         return "/";
     };
     NativescriptPlatformLocation.prototype.onPopState = function (fn) {
-        trace_1.routerLog("NativescriptPlatformLocation.onPopState()");
         this.locationStartegy.onPopState(fn);
     };
     NativescriptPlatformLocation.prototype.onHashChange = function (fn) {
-        trace_1.routerLog("NativescriptPlatformLocation.onHashChange()");
     };
     Object.defineProperty(NativescriptPlatformLocation.prototype, "search", {
         get: function () {
-            trace_1.routerLog("NativescriptPlatformLocation.get search()");
             return "";
         },
         enumerable: true,
@@ -29,7 +26,6 @@ var NativescriptPlatformLocation = (function (_super) {
     });
     Object.defineProperty(NativescriptPlatformLocation.prototype, "hash", {
         get: function () {
-            trace_1.routerLog("NativescriptPlatformLocation.get hash()");
             return "";
         },
         enumerable: true,
@@ -37,29 +33,24 @@ var NativescriptPlatformLocation = (function (_super) {
     });
     Object.defineProperty(NativescriptPlatformLocation.prototype, "pathname", {
         get: function () {
-            trace_1.routerLog("NativescriptPlatformLocation.get pathname()");
             return this.locationStartegy.path();
         },
         set: function (newPath) {
-            trace_1.routerLog("NativescriptPlatformLocation.set pathname(): " + newPath);
+            throw new Error("NativescriptPlatformLocation set pathname - not implemented");
         },
         enumerable: true,
         configurable: true
     });
     NativescriptPlatformLocation.prototype.pushState = function (state, title, url) {
-        trace_1.routerLog("NativescriptPlatformLocation.pushState()");
         this.locationStartegy.pushState(state, title, url, null);
     };
     NativescriptPlatformLocation.prototype.replaceState = function (state, title, url) {
-        trace_1.routerLog("NativescriptPlatformLocation.replaceState()");
         this.locationStartegy.replaceState(state, title, url, null);
     };
     NativescriptPlatformLocation.prototype.forward = function () {
-        trace_1.routerLog("NativescriptPlatformLocation.forward()");
-        throw new Error("NativescriptPlatformLocation.forward() not implemend");
+        throw new Error("NativescriptPlatformLocation.forward() - not implemented");
     };
     NativescriptPlatformLocation.prototype.back = function () {
-        trace_1.routerLog("NativescriptPlatformLocation.back()");
         this.locationStartegy.back();
     };
     NativescriptPlatformLocation = __decorate([

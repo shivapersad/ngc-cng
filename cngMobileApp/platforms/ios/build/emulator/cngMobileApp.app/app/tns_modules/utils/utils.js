@@ -1,4 +1,3 @@
-var types = require("utils/types");
 var common = require("./utils-common");
 var color_1 = require("color");
 var enums = require("ui/enums");
@@ -51,82 +50,6 @@ var ios;
         }
     }
     ios.setTextAlignment = setTextAlignment;
-    function setTextDecorationAndTransform(v, decoration, transform, letterSpacing) {
-        var hasLetterSpacing = types.isNumber(letterSpacing) && !isNaN(letterSpacing);
-        if (v.formattedText) {
-            if (v.style.textDecoration.indexOf(enums.TextDecoration.none) === -1) {
-                if (v.style.textDecoration.indexOf(enums.TextDecoration.underline) !== -1) {
-                    v.formattedText.underline = NSUnderlineStyle.NSUnderlineStyleSingle;
-                }
-                if (v.style.textDecoration.indexOf(enums.TextDecoration.lineThrough) !== -1) {
-                    v.formattedText.strikethrough = NSUnderlineStyle.NSUnderlineStyleSingle;
-                }
-            }
-            else {
-                v.formattedText.underline = NSUnderlineStyle.NSUnderlineStyleNone;
-            }
-            for (var i = 0; i < v.formattedText.spans.length; i++) {
-                var span = v.formattedText.spans.getItem(i);
-                span.text = getTransformedText(v, span.text, transform);
-            }
-            if (hasLetterSpacing) {
-                var attrText = void 0;
-                if (v._nativeView instanceof UIButton) {
-                    attrText = v._nativeView.attributedTitleForState(UIControlState.UIControlStateNormal);
-                }
-                else {
-                    attrText = v._nativeView.attributedText;
-                }
-                attrText.addAttributeValueRange(NSKernAttributeName, letterSpacing, { location: 0, length: v._nativeView.attributedText.length });
-                if (v._nativeView instanceof UIButton) {
-                    v._nativeView.setAttributedTitleForState(attrText, UIControlState.UIControlStateNormal);
-                }
-            }
-        }
-        else {
-            var source = v.text;
-            var attributes = new Array();
-            var range = { location: 0, length: source.length };
-            var decorationValues = (decoration + "").split(" ");
-            if (decorationValues.indexOf(enums.TextDecoration.none) === -1 || hasLetterSpacing) {
-                var dict = new Map();
-                if (decorationValues.indexOf(enums.TextDecoration.underline) !== -1) {
-                    dict.set(NSUnderlineStyleAttributeName, NSUnderlineStyle.NSUnderlineStyleSingle);
-                }
-                if (decorationValues.indexOf(enums.TextDecoration.lineThrough) !== -1) {
-                    dict.set(NSStrikethroughStyleAttributeName, NSUnderlineStyle.NSUnderlineStyleSingle);
-                }
-                if (hasLetterSpacing) {
-                    dict.set(NSKernAttributeName, letterSpacing);
-                }
-                attributes.push({ attrs: dict, range: NSValue.valueWithRange(range) });
-            }
-            var view = v._nativeView;
-            source = getTransformedText(v, source, transform);
-            if (attributes.length > 0) {
-                var result = NSMutableAttributedString.alloc().initWithString(source);
-                for (var i = 0; i < attributes.length; i++) {
-                    result.setAttributesRange(attributes[i]["attrs"], attributes[i]["range"].rangeValue);
-                }
-                if (view instanceof UIButton) {
-                    view.setAttributedTitleForState(result, UIControlState.UIControlStateNormal);
-                }
-                else {
-                    view.attributedText = result;
-                }
-            }
-            else {
-                if (view instanceof UIButton) {
-                    view.setAttributedTitleForState(NSMutableAttributedString.alloc().initWithString(source), UIControlState.UIControlStateNormal);
-                    view.setTitleForState(source, UIControlState.UIControlStateNormal);
-                }
-                else {
-                    view.text = source;
-                }
-            }
-        }
-    }
-    ios.setTextDecorationAndTransform = setTextDecorationAndTransform;
     function getTransformedText(view, source, transform) {
         var result = source;
         switch (transform) {
@@ -146,6 +69,7 @@ var ios;
         }
         return result;
     }
+    ios.getTransformedText = getTransformedText;
     function NSStringFromNSAttributedString(source) {
         return NSString.stringWithString(source instanceof NSAttributedString && source.string || source);
     }
@@ -259,3 +183,4 @@ var UIDocumentInteractionControllerDelegateImpl = (function (_super) {
     UIDocumentInteractionControllerDelegateImpl.ObjCProtocols = [UIDocumentInteractionControllerDelegate];
     return UIDocumentInteractionControllerDelegateImpl;
 }(NSObject));
+//# sourceMappingURL=utils.js.map

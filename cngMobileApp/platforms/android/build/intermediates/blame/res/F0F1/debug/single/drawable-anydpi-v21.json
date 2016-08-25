@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-anydpi-v21/ic_info_outline_24dp_selected.xml",
+        "source": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/exploded-aar/com.mapbox.mapboxsdk/mapbox-android-sdk/4.1.0/res/drawable-anydpi-v21/ic_info_outline_24dp_selected.xml"
+    },
+    {
+        "merged": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-anydpi-v21/ic_info_outline_24dp.xml",
+        "source": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/exploded-aar/com.mapbox.mapboxsdk/mapbox-android-sdk/4.1.0/res/drawable-anydpi-v21/ic_info_outline_24dp.xml"
+    }
+]

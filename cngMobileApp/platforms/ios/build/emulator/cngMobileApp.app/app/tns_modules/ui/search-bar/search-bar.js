@@ -196,3 +196,4 @@ var SearchBarStyler = (function () {
 }());
 exports.SearchBarStyler = SearchBarStyler;
 SearchBarStyler.registerHandlers();
+//# sourceMappingURL=search-bar.js.map

@@ -1,0 +1,22 @@
+{
+    "licensed-converters":
+    {
+        "converter1":
+        {
+            "name": "Massy ACL",
+            "address": "OMeara Industrial Estate",
+            "phoneNumber": "(868)642-4236",
+            "website": "www.nmmotors.com",
+            "emailAddress": "marketing@nmmotors.com",
+            "opening-times":
+            {
+                "Sunday": "0800-1700",
+                "Monday": "0800-1700",
+                "Tuesday": "0800-1700",
+                "Wednesday": "0800-1700",
+                "Thursday": "0800-1700",
+                "Friday": "0800-1700"
+            }
+        }
+    }
+}

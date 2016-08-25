@@ -22,7 +22,6 @@ router.get('/:id', function(req, res) {
 
   localPostDetails.find(function(err, localPosts) {
     if (err) return console.error(err);
-    //console.log(localPosts);
     res.render('review-local-posts', {posts: localPosts});
   })
 })

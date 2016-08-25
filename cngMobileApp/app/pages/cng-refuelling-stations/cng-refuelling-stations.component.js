@@ -49,7 +49,6 @@ var CNGRefuellingStationsComponent = (function () {
         this.showMap = false;
     }
     CNGRefuellingStationsComponent.prototype.onItemTap = function (args) {
-        console.log("Tapped Item: " + args.index);
         this._router.navigate(["/station/" + args.index]);
     };
     CNGRefuellingStationsComponent.prototype.tabIndexChanged = function (e) {
@@ -84,8 +83,8 @@ var CNGRefuellingStationsComponent = (function () {
             margins: {
                 left: 50,
                 right: 50,
-                top: 100,
-                bottom: 50 // default 0 
+                top: 130,
+                bottom: 60 // default 0 
             },
             center: {
                 lat: 10.6918,

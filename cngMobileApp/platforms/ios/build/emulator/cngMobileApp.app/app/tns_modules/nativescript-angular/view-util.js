@@ -9,8 +9,8 @@ var style_property_1 = require("ui/styling/style-property");
 var dependency_observable_1 = require("ui/core/dependency-observable");
 var platform_1 = require("platform");
 var trace_1 = require("./trace");
-var IOS_PREFX = "@ios:";
-var ANDROID_PREFX = "@android:";
+var IOS_PREFX = ":ios:";
+var ANDROID_PREFX = ":android:";
 var whiteSpaceSplitter = /\s+/;
 function isView(view) {
     return view instanceof view_1.View;
@@ -39,6 +39,12 @@ var ViewUtil = (function () {
             parent.meta.insertChild(parent, child, atIndex);
         }
         else if (isLayout(parent)) {
+            if (child.parent === parent) {
+                var index = parent.getChildIndex(child);
+                if (index !== -1) {
+                    parent.removeChild(child);
+                }
+            }
             if (atIndex !== -1) {
                 parent.insertChild(child, atIndex);
             }
@@ -234,10 +240,10 @@ var ViewUtil = (function () {
         return propertyMaps.get(type);
     };
     ViewUtil.prototype.cssClasses = function (view) {
-        if (!view.cssClasses) {
-            view.cssClasses = new Map();
+        if (!view.ngCssClasses) {
+            view.ngCssClasses = new Map();
         }
-        return view.cssClasses;
+        return view.ngCssClasses;
     };
     ViewUtil.prototype.addClass = function (view, className) {
         this.cssClasses(view).set(className, true);
@@ -263,7 +269,12 @@ var ViewUtil = (function () {
     };
     ViewUtil.prototype.setStyleValue = function (view, property, value) {
         try {
-            view.style._setValue(property, value, dependency_observable_1.ValueSource.Local);
+            if (value === null) {
+                view.style._resetValue(property, dependency_observable_1.ValueSource.Local);
+            }
+            else {
+                view.style._setValue(property, value, dependency_observable_1.ValueSource.Local);
+            }
         }
         catch (ex) {
             trace_1.styleError("Error setting property: " + property.name + " view: " + view + " value: " + value + " " + ex);
@@ -277,7 +288,6 @@ var ViewUtil = (function () {
         style_property_1.withStyleProperty(name, resolvedValue, function (property, value) {
             if (types_1.isString(property)) {
                 //Fall back to resolving property by name.
-                var propertyName = property;
                 var resolvedProperty = style_property_1.getPropertyByName(name);
                 if (resolvedProperty) {
                     _this.setStyleValue(view, resolvedProperty, resolvedValue);
@@ -288,7 +298,7 @@ var ViewUtil = (function () {
             }
             else {
                 var resolvedProperty = property;
-                _this.setStyleValue(view, resolvedProperty, resolvedValue);
+                _this.setStyleValue(view, resolvedProperty, value);
             }
         });
     };

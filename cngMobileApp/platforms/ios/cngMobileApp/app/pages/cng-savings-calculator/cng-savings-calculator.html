@@ -27,14 +27,18 @@
         <Label text="Litres of CNG Equivalent Bought"></Label>
         <TextField class="noEdit" [ngModel]='totalLitresCNG | number:"1.2-2" ' (ngModel)='totalLitresCNG' editable="false"></TextField>
 
+        <!--
         <Label text="Cost To Convert Each Vehicle"></Label>
         <TextField [(ngModel)]="cngSavings.costToConvert" keyboardType="number"></TextField>
+        -->
 
-        <Label class="savings" text="Each week using CNG could save (TTD):" width="100%" height="40"></Label>
+        <Label class="savings" text="Each week using CNG could save (TTD):" width="100%"></Label>
         <TextField class="noEdit savings" [ngModel]='cngSavings.savings | number:"1.2-2" ' (ngModel)='cngSavings.savings' editable="false" width="100%" height="40"></TextField>
 
-        <Button class="btnSavings" text="Calculate Savings" (tap)="calculateSavings(bar)"></Button>
-        <Button class="btnSavings" text="Clear Form" (tap)="clearForm()"></Button>
+        <StackLayout>
+            <Button text="Calculate Savings" (tap)="calculateSavings(bar)"></Button>
+            <Button text="Clear Form" (tap)="clearForm()"></Button>
+        </StackLayout>
 
     </WrapLayout>
 

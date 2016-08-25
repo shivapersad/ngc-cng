@@ -33,6 +33,9 @@ var UITextFieldDelegateImpl = (function (_super) {
                 owner._onPropertyChangedFromNative(text_base_1.TextBase.textProperty, textField.text);
             }
             owner.dismissSoftInput();
+            if (owner.formattedText) {
+                owner.formattedText.createFormattedStringCore();
+            }
         }
     };
     UITextFieldDelegateImpl.prototype.textFieldShouldClear = function (textField) {
@@ -54,10 +57,6 @@ var UITextFieldDelegateImpl = (function (_super) {
     UITextFieldDelegateImpl.prototype.textFieldShouldChangeCharactersInRangeReplacementString = function (textField, range, replacementString) {
         var owner = this._owner.get();
         if (owner) {
-            var r = textField.selectedTextRange;
-            owner.style._updateTextDecoration();
-            owner.style._updateTextTransform();
-            textField.selectedTextRange = r;
             if (owner.updateTextTrigger === enums_1.UpdateTextTrigger.textChanged) {
                 if (textField.secureTextEntry && this.firstEdit) {
                     owner._onPropertyChangedFromNative(text_base_1.TextBase.textProperty, replacementString);
@@ -68,6 +67,9 @@ var UITextFieldDelegateImpl = (function (_super) {
                         owner._onPropertyChangedFromNative(text_base_1.TextBase.textProperty, newText);
                     }
                 }
+            }
+            if (owner.formattedText) {
+                owner.formattedText._updateCharactersInRangeReplacementString(range.location, range.length, replacementString);
             }
         }
         this.firstEdit = false;
@@ -112,8 +114,6 @@ var TextField = (function (_super) {
     TextField.prototype.onLoaded = function () {
         _super.prototype.onLoaded.call(this);
         this._ios.delegate = this._delegate;
-        this.style._updateTextDecoration();
-        this.style._updateTextTransform();
     };
     TextField.prototype.onUnloaded = function () {
         this._ios.delegate = null;
@@ -165,3 +165,4 @@ var TextFieldStyler = (function () {
 }());
 exports.TextFieldStyler = TextFieldStyler;
 TextFieldStyler.registerHandlers();
+//# sourceMappingURL=text-field.js.map

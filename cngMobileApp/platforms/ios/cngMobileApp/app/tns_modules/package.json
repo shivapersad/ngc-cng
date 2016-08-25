@@ -1,11 +1,11 @@
 {
   "name": "tns-core-modules",
   "description": "Telerik NativeScript Core Modules",
-  "version": "2.1.0",
+  "version": "2.2.1",
   "homepage": "https://www.nativescript.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NativeScript/NativeScript/commit/f201465fb38f23772110776168a99aaf8c223ac8"
+    "url": "https://github.com/NativeScript/NativeScript/commit/2b3353a7f5e7b44a69fa53dcd25dc69209aafbfd"
   },
   "files": [
     "**/*.d.ts",
@@ -24,18 +24,18 @@
   "license": "Apache-2.0",
   "typings": "tns-core-modules.d.ts",
   "dependencies": {
-    "tns-core-modules-widgets": "2.1.4"
+    "tns-core-modules-widgets": "2.2.0"
   },
   "nativescript": {
     "platforms": {
-      "ios": "2.1.0",
-      "android": "2.1.1"
+      "ios": "2.2.0",
+      "android": "2.2.0"
     }
   },
-  "_id": "tns-core-modules@2.1.0",
-  "_shasum": "b28dcbf4926dc8d342e47fac8f699824a475b64a",
-  "_resolved": "https://registry.npmjs.org/tns-core-modules/-/tns-core-modules-2.1.0.tgz",
-  "_from": "tns-core-modules@latest",
+  "_id": "tns-core-modules@2.2.1",
+  "_shasum": "fef57ab78998cb8a908d88b33b4787a620fa6ead",
+  "_resolved": "https://registry.npmjs.org/tns-core-modules/-/tns-core-modules-2.2.1.tgz",
+  "_from": "tns-core-modules@>=2.2.0 <3.0.0",
   "scripts": {},
   "_npmVersion": "2.15.5",
   "_nodeVersion": "4.4.5",
@@ -44,8 +44,8 @@
     "email": "vladimir.enchev@gmail.com"
   },
   "dist": {
-    "shasum": "b28dcbf4926dc8d342e47fac8f699824a475b64a",
-    "tarball": "https://registry.npmjs.org/tns-core-modules/-/tns-core-modules-2.1.0.tgz"
+    "shasum": "fef57ab78998cb8a908d88b33b4787a620fa6ead",
+    "tarball": "https://registry.npmjs.org/tns-core-modules/-/tns-core-modules-2.2.1.tgz"
   },
   "maintainers": [
     {
@@ -99,7 +99,7 @@
   ],
   "_npmOperationalInternal": {
     "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/tns-core-modules-2.1.0.tgz_1467272652964_0.6867420612834394"
+    "tmp": "tmp/tns-core-modules-2.2.1.tgz_1471510855100_0.18650276795960963"
   },
   "directories": {},
   "readme": "ERROR: No README data found!"

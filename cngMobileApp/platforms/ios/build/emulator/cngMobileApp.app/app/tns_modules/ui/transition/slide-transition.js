@@ -61,3 +61,4 @@ var SlideTransition = (function (_super) {
     return SlideTransition;
 }(transition.Transition));
 exports.SlideTransition = SlideTransition;
+//# sourceMappingURL=slide-transition.js.map

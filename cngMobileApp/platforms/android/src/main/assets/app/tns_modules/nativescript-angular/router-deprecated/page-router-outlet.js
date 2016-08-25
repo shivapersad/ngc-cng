@@ -62,7 +62,7 @@ var PageRouterOutlet = (function (_super) {
         this.log("activate", nextInstruction);
         var previousInstruction = this.currentInstruction;
         this.currentInstruction = nextInstruction;
-        if (this.location.isPageNavigatingBack()) {
+        if (this.location._isPageNavigatingBack()) {
             return this.activateOnGoBack(nextInstruction, previousInstruction);
         }
         else {
@@ -71,7 +71,7 @@ var PageRouterOutlet = (function (_super) {
     };
     PageRouterOutlet.prototype.activateOnGoBack = function (nextInstruction, previousInstruction) {
         trace_1.routerLog("PageRouterOutlet.activate() - Back naviation, so load from cache: " + nextInstruction.componentType.name);
-        this.location.finishBackPageNavigation();
+        this.location._finishBackPageNavigation();
         // Get Component form ref and just call the activate hook
         var cacheItem = this.refCache.peek();
         this.componentRef = cacheItem.componentRef;
@@ -130,7 +130,7 @@ var PageRouterOutlet = (function (_super) {
         this.viewUtil.removeChild(componentView.parent, componentView);
         //Add it to the new page
         page.content = componentView;
-        this.location.navigateToNewPage();
+        this.location._beginPageNavigation();
         return new Promise(function (resolve, reject) {
             page.on('navigatingTo', function () {
                 // Finish activation when page navigation has started
@@ -138,7 +138,7 @@ var PageRouterOutlet = (function (_super) {
             });
             page.on('navigatedFrom', global.Zone.current.wrap(function (args) {
                 if (args.isBackNavigation) {
-                    _this.location.beginBackPageNavigation();
+                    _this.location._beginBackPageNavigation();
                     _this.location.back();
                 }
             }));
@@ -162,7 +162,7 @@ var PageRouterOutlet = (function (_super) {
             route_lifecycle_reflector_1.hasLifecycleHook(routerHooks.routerOnDeactivate, this.componentRef.componentType)) {
             next = async_1.PromiseWrapper.resolve(this.componentRef.instance.routerOnDeactivate(nextInstruction, this.currentInstruction));
         }
-        if (this.location.isPageNavigatingBack()) {
+        if (this.location._isPageNavigatingBack()) {
             trace_1.routerLog("PageRouterOutlet.deactivate() while going back - should destroy: " + instruction.componentType.name);
             return next.then(function (_) {
                 var popedItem = _this.refCache.pop();
@@ -246,7 +246,7 @@ var PageRouterOutlet = (function (_super) {
         this.parentRouter["_childRouter"] = childRouter;
     };
     PageRouterOutlet.prototype.log = function (method, nextInstruction) {
-        trace_1.routerLog("PageRouterOutlet." + method + " isBack: " + this.location.isPageNavigatingBack() + " nextUrl: " + nextInstruction.urlPath);
+        trace_1.routerLog("PageRouterOutlet." + method + " isBack: " + this.location._isPageNavigatingBack() + " nextUrl: " + nextInstruction.urlPath);
     };
     __decorate([
         core_1.ViewChild('loader', { read: core_1.ViewContainerRef }), 

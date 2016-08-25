@@ -24,7 +24,6 @@ export class StationComponent implements OnInit{
     imgCNG: string;
     imgATM: string;
     imgShop: string;
-    imgTyrePressure: string;
 
     arr: Array<any> = [
 
@@ -81,7 +80,7 @@ export class StationComponent implements OnInit{
         this.facilities = this.station['facilities'];
 
         if (this.facilities['cng'] === "y") {
-            this.imgCNG = 'res://cng-icon';
+            this.imgCNG = 'res://cng_icon';
             
         }
         else {
@@ -89,14 +88,14 @@ export class StationComponent implements OnInit{
         }
 
         if (this.facilities['atm'] === "y") {
-            this.imgATM = "res://atm-icon";
+            this.imgATM = "res://atm_icon";
         }
         else {
             this.imgATM = "res://not_available";
         }
 
         if (this.facilities['shop'] === "y") {
-            this.imgShop = "res://shop-icon";
+            this.imgShop = "res://shop_icon";
         }
         else {
             this.imgShop = "res://not_available";

@@ -230,6 +230,9 @@ var FormattedString = (function (_super) {
             view.formattedText = value;
         }
     };
+    FormattedString.prototype._updateCharactersInRangeReplacementString = function (rangeLocation, rangeLength, replacementString) {
+    };
     return FormattedString;
 }(observable.Observable));
 exports.FormattedString = FormattedString;
+//# sourceMappingURL=formatted-string-common.js.map

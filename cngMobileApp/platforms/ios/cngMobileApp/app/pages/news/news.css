@@ -1,0 +1,15 @@
+Image {
+
+    width: 80%;
+    height: 50%;
+    horizontal-align: center;
+
+}
+
+Label {
+
+    font-size: 16;
+    color: black;
+    font-weight: bold;
+
+}

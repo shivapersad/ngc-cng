@@ -147,13 +147,16 @@ var Span = (function (_super) {
         },
         set: function (value) {
             if (this._text !== value) {
-                this._text = value;
+                this._setTextInternal(value);
                 this.updateAndNotify();
             }
         },
         enumerable: true,
         configurable: true
     });
+    Span.prototype._setTextInternal = function (value) {
+        this._text = value;
+    };
     Object.defineProperty(Span.prototype, "parentFormattedString", {
         get: function () {
             return this._parentFormattedString;
@@ -221,3 +224,4 @@ var Span = (function (_super) {
     return Span;
 }(bindable.Bindable));
 exports.Span = Span;
+//# sourceMappingURL=span-common.js.map

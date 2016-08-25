@@ -1,5 +1,6 @@
-var di_1 = require('@angular/core/src/di');
+var core_1 = require('@angular/core');
 var api_1 = require('@angular/core/src/render/api');
+var animation_driver_1 = require('@angular/core/src/animation/animation_driver');
 var platform_providers_1 = require("./platform-providers");
 var lang_1 = require('@angular/core/src/facade/lang');
 var dom_renderer_1 = require('@angular/platform-browser/src/dom/dom_renderer');
@@ -10,10 +11,11 @@ var view_util_1 = require("./view-util");
 var trace_1 = require("./trace");
 var utils_1 = require("utils/utils");
 var NativeScriptRootRenderer = (function () {
-    function NativeScriptRootRenderer(rootView, device) {
-        this._rootView = null;
+    function NativeScriptRootRenderer(_rootView, device, _animationDriver, _zone) {
+        this._rootView = _rootView;
+        this._animationDriver = _animationDriver;
+        this._zone = _zone;
         this._registeredComponents = new Map();
-        this._rootView = rootView;
         this._viewUtil = new view_util_1.ViewUtil(device);
     }
     Object.defineProperty(NativeScriptRootRenderer.prototype, "rootView", {
@@ -43,31 +45,31 @@ var NativeScriptRootRenderer = (function () {
     NativeScriptRootRenderer.prototype.renderComponent = function (componentProto) {
         var renderer = this._registeredComponents.get(componentProto.id);
         if (lang_1.isBlank(renderer)) {
-            renderer = new NativeScriptRenderer(this, componentProto);
+            renderer = new NativeScriptRenderer(this, componentProto, this._animationDriver, this._zone);
             this._registeredComponents.set(componentProto.id, renderer);
         }
         return renderer;
     };
     NativeScriptRootRenderer = __decorate([
-        di_1.Injectable(),
-        __param(0, di_1.Optional()),
-        __param(0, di_1.Inject(platform_providers_1.APP_ROOT_VIEW)),
-        __param(1, di_1.Inject(platform_providers_1.DEVICE)), 
-        __metadata('design:paramtypes', [view_1.View, Object])
+        core_1.Injectable(),
+        __param(0, core_1.Optional()),
+        __param(0, core_1.Inject(platform_providers_1.APP_ROOT_VIEW)),
+        __param(1, core_1.Inject(platform_providers_1.DEVICE)), 
+        __metadata('design:paramtypes', [view_1.View, Object, animation_driver_1.AnimationDriver, core_1.NgZone])
     ], NativeScriptRootRenderer);
     return NativeScriptRootRenderer;
 }());
 exports.NativeScriptRootRenderer = NativeScriptRootRenderer;
 var NativeScriptRenderer = (function (_super) {
     __extends(NativeScriptRenderer, _super);
-    function NativeScriptRenderer(_rootRenderer, componentProto) {
+    function NativeScriptRenderer(rootRenderer, componentProto, animationDriver, zone) {
         _super.call(this);
-        this._rootRenderer = _rootRenderer;
+        this.rootRenderer = rootRenderer;
         this.componentProto = componentProto;
+        this.animationDriver = animationDriver;
+        this.zone = zone;
         this.attrReplacer = new RegExp(utils_1.escapeRegexSymbols(dom_renderer_1.CONTENT_ATTR), "g");
         this.attrSanitizer = /-/g;
-        this.rootRenderer = _rootRenderer;
-        var page = this.rootRenderer.page;
         var stylesLength = componentProto.styles.length;
         this.componentProtoId = componentProto.id;
         for (var i = 0; i < stylesLength; i++) {
@@ -89,7 +91,7 @@ var NativeScriptRenderer = (function (_super) {
         return input.replace(this.attrReplacer, "_ng_content_" + componentId.replace(this.attrSanitizer, "_"));
     };
     NativeScriptRenderer.prototype.renderComponent = function (componentProto) {
-        return this._rootRenderer.renderComponent(componentProto);
+        return this.rootRenderer.renderComponent(componentProto);
     };
     NativeScriptRenderer.prototype.selectRootElement = function (selector) {
         trace_1.rendererLog('selectRootElement: ' + selector);
@@ -116,7 +118,6 @@ var NativeScriptRenderer = (function (_super) {
         viewRootNodes.forEach(function (node, index) {
             var childIndex = insertPosition + index + 1;
             _this.viewUtil.insertChild(parent, node, childIndex);
-            _this.animateNodeEnter(node);
         });
     };
     NativeScriptRenderer.prototype.detachView = function (viewRootNodes) {
@@ -124,12 +125,7 @@ var NativeScriptRenderer = (function (_super) {
         for (var i = 0; i < viewRootNodes.length; i++) {
             var node = viewRootNodes[i];
             this.viewUtil.removeChild(node.parent, node);
-            this.animateNodeLeave(node);
         }
-    };
-    NativeScriptRenderer.prototype.animateNodeEnter = function (node) {
-    };
-    NativeScriptRenderer.prototype.animateNodeLeave = function (node) {
     };
     NativeScriptRenderer.prototype.destroyView = function (hostElement, viewAllNodes) {
         trace_1.rendererLog("NativeScriptRenderer.destroyView");
@@ -196,8 +192,18 @@ var NativeScriptRenderer = (function (_super) {
         return this.viewUtil.createText(value);
     };
     NativeScriptRenderer.prototype.listen = function (renderElement, eventName, callback) {
+        var _this = this;
         trace_1.rendererLog('NativeScriptRenderer.listen: ' + eventName);
-        var zonedCallback = global.Zone.current.wrap(callback);
+        // Explicitly wrap in zone
+        var zonedCallback = function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i - 0] = arguments[_i];
+            }
+            _this.zone.run(function () {
+                callback.apply(undefined, args);
+            });
+        };
         renderElement.on(eventName, zonedCallback);
         if (eventName === view_1.View.loadedEvent && renderElement.isLoaded) {
             var notifyData = { eventName: view_1.View.loadedEvent, object: renderElement };
@@ -209,11 +215,12 @@ var NativeScriptRenderer = (function (_super) {
         throw new Error('NativeScriptRenderer.listenGlobal() - Not implemented.');
     };
     NativeScriptRenderer.prototype.animate = function (element, startingStyles, keyframes, duration, delay, easing) {
-        throw new Error("NativeScriptRenderer.animate() - Not implemented");
+        var player = this.animationDriver.animate(element, startingStyles, keyframes, duration, delay, easing);
+        return player;
     };
     NativeScriptRenderer = __decorate([
-        di_1.Injectable(), 
-        __metadata('design:paramtypes', [NativeScriptRootRenderer, api_1.RenderComponentType])
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [NativeScriptRootRenderer, api_1.RenderComponentType, animation_driver_1.AnimationDriver, core_1.NgZone])
     ], NativeScriptRenderer);
     return NativeScriptRenderer;
 }(api_1.Renderer));

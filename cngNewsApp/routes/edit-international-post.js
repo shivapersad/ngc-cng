@@ -14,8 +14,6 @@ var isAuthenticated = function (req, res, next) {
 }
 
 router.get('/:id', isAuthenticated, function(req, res) {
-  console.log('Redirecting to edit International Post page');
-  //console.log("GET: " + JSON.stringify(req.url));
   var id = req.param('id');
   console.log("ID: " + id);
 

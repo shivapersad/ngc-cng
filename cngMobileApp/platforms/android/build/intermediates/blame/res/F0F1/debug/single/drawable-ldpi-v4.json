@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-ldpi-v4/homepage.png",
+        "source": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/src/main/res/drawable-ldpi/homepage.png"
+    },
+    {
+        "merged": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-ldpi-v4/not_available.png",
+        "source": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/src/main/res/drawable-ldpi/not_available.png"
+    },
+    {
+        "merged": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-ldpi-v4/working.png",
+        "source": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/src/main/res/drawable-ldpi/working.png"
+    },
+    {
+        "merged": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-ldpi-v4/ic_info_outline_24dp.png",
+        "source": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/exploded-aar/com.mapbox.mapboxsdk/mapbox-android-sdk/4.1.0/res/drawable-ldpi-v4/ic_info_outline_24dp.png"
+    },
+    {
+        "merged": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-ldpi-v4/icon.png",
+        "source": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/src/main/res/drawable-ldpi/icon.png"
+    },
+    {
+        "merged": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-ldpi-v4/ic_info_outline_24dp_selected.png",
+        "source": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/exploded-aar/com.mapbox.mapboxsdk/mapbox-android-sdk/4.1.0/res/drawable-ldpi-v4/ic_info_outline_24dp_selected.png"
+    },
+    {
+        "merged": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-ldpi-v4/atm_icon.png",
+        "source": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/src/main/res/drawable-ldpi/atm_icon.png"
+    },
+    {
+        "merged": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-ldpi-v4/shop_icon.png",
+        "source": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/src/main/res/drawable-ldpi/shop_icon.png"
+    },
+    {
+        "merged": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/build/intermediates/res/merged/F0F1/debug/drawable-ldpi-v4/cng_icon.png",
+        "source": "/Users/shivapersad/Projects/ngc-cng/cngMobileApp/platforms/android/src/main/res/drawable-ldpi/cng_icon.png"
+    }
+]
